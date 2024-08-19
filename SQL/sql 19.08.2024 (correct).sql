@@ -153,10 +153,44 @@ values (1, 1, 2500), (2, 1, 2300), (3, 1, 2000), (1, 2, 2300),
 (4, 4, 3500), (5, 4, 3300), (6, 4, 3100), (4, 5, 3300), (5, 5, 3100), 
 (6, 5, 2900), (4, 6, 3400), (5, 6, 3200), (6, 6, 3000);
 
+insert into "StatusReservations" ("Name")
+values ('Вы успешно записаны:'), ('Запись отменена:'), ('Запись перенесена:'), ('Действующая запись:');
+
+insert into "StatusReservations" ("Name")
+values ('Услуга оказана:')
+
 select * from "Services";
 select * from "MasterTypes";
 
+INSERT INTO "Reservations"(
+"StartDateTime", "Sum", "ClientId", "StatusId", "IsAction")
+	VALUES ('19/08/2024 20:00:00', 2500,1 , 1, true);
 
+	
+INSERT INTO "Reservations"(
+"StartDateTime", "Sum", "ClientId", "StatusId", "IsAction")
+	VALUES ('20/07/2024 20:00:00', 2000,4 , 1, false);
+
+INSERT INTO "Reservations"(
+"StartDateTime", "Sum", "ClientId", "StatusId", "IsAction")
+	VALUES ('26/08/2024 10:00:00', 2500,5 , 2, false);
+
+INSERT INTO "Reservations"(
+"StartDateTime", "Sum", "ClientId", "StatusId", "IsAction")
+	VALUES ('26/08/2024 13:00:00', 2500,5 , 3, true);
+	
+	
+INSERT INTO "Reservations"(
+"StartDateTime", "Sum", "ClientId", "StatusId", "IsAction")
+	VALUES ('22/08/2024 09:00:00', 2300,5 , 5, true);	
+
+	
+INSERT INTO "Reservations"(
+"StartDateTime", "Sum", "ClientId", "StatusId", "IsAction")
+	VALUES ('30/08/2024 09:00:00', 2300,4 , 4, false);	
+	
+
+select * from "Reservations";
 
 
 
