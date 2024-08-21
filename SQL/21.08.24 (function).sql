@@ -29,3 +29,6 @@ join "Services" as S
 on MTS."ServiceId"=S."Id"
 where UR."Id" = 3
 
+select * from "Users"
+
+
