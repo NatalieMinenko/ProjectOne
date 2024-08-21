@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectNogotochki", "ProjectNogotochki\ProjectNogotochki.csproj", "{CA9F8D43-CD14-4AAB-843C-0F20D30DDFE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NailStudioBot.Bot", "NailStudioBot.Bot\NailStudioBot.Bot.csproj", "{44B72034-1C24-40EB-8617-742B64DA3A4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NailStudio.DAL", "NailStudio.DAL\NailStudio.DAL.csproj", "{A311E319-4649-436E-B216-AD9680E9828B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NailStudioBot.BLL", "NailStudioBot.BLL\NailStudioBot.BLL.csproj", "{3304166B-3546-4065-90F2-555EBF9AB527}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NailStudioBot.Core", "NailStudioBot.Core\NailStudioBot.Core.csproj", "{7601F3B4-1E04-40C7-A8B4-83764C747A3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDliaTestov", "ConsoleDliaTestov\ConsoleDliaTestov.csproj", "{5534BA2C-F5F0-4BC9-AB22-8245E784FFAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +19,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CA9F8D43-CD14-4AAB-843C-0F20D30DDFE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA9F8D43-CD14-4AAB-843C-0F20D30DDFE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA9F8D43-CD14-4AAB-843C-0F20D30DDFE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA9F8D43-CD14-4AAB-843C-0F20D30DDFE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44B72034-1C24-40EB-8617-742B64DA3A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B72034-1C24-40EB-8617-742B64DA3A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44B72034-1C24-40EB-8617-742B64DA3A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B72034-1C24-40EB-8617-742B64DA3A4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A311E319-4649-436E-B216-AD9680E9828B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A311E319-4649-436E-B216-AD9680E9828B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A311E319-4649-436E-B216-AD9680E9828B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A311E319-4649-436E-B216-AD9680E9828B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3304166B-3546-4065-90F2-555EBF9AB527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3304166B-3546-4065-90F2-555EBF9AB527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3304166B-3546-4065-90F2-555EBF9AB527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3304166B-3546-4065-90F2-555EBF9AB527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7601F3B4-1E04-40C7-A8B4-83764C747A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7601F3B4-1E04-40C7-A8B4-83764C747A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7601F3B4-1E04-40C7-A8B4-83764C747A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7601F3B4-1E04-40C7-A8B4-83764C747A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5534BA2C-F5F0-4BC9-AB22-8245E784FFAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5534BA2C-F5F0-4BC9-AB22-8245E784FFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5534BA2C-F5F0-4BC9-AB22-8245E784FFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5534BA2C-F5F0-4BC9-AB22-8245E784FFAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

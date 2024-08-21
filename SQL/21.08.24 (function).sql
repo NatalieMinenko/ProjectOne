@@ -29,6 +29,3 @@ join "Services" as S
 on MTS."ServiceId"=S."Id"
 where UR."Id" = 3
 
-select * from "MasterType_Services"
-select * from "MasterTypes"
-select * from "Services"
