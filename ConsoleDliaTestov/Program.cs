@@ -12,7 +12,7 @@ namespace ConsoleDliaTestov
             string conectionString = "Server=localhost; Port=5432; User Id=postgres; Password=postgres; Database=MyFirstDB;";
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = "INSERT INTO \"Users\"(\"Name\") VALUES ('Olga');";
+                //string query = "INSERT INTO \"Users\"(\"Name\") VALUES ('Olga');";
                 connection.Open();
                 connection.Query(query);
             }
