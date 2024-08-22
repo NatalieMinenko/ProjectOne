@@ -10,6 +10,10 @@ namespace NailStudio.DAL.Querys
     {
         public const string AddUserQuery = $"INSERT INTO \"Users\"(\"Name\") VALUES ('@name');";
 
-        public const string UpdateUserQuery=$"update \"Users\" set\"Name\"=@name where \"Id\"=@id";
+        public const string UpdateUserQuery=$"UPDATE \"Users\" set\"Name\"=@name where \"Id\"=@id";
+
+        public const string GetAllUsersQuery = $"SELECT \"Id\", \"Name\" FROM public.\"Users\";";
+
+        public const string GetUsersByIdQuery = $"SELECT \"Id\", \"Name\" FROM public.\"Users\" WHERE \"Id\"=@id;";
     }
 }
