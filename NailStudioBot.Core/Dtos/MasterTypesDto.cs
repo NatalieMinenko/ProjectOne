@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace NailStudioBot.Core.Dtos
 {
-    internal class MasterTypesDto
+    public class MasterTypesDto
     {
+        public int? Id { get; set; }
+
+        public string? Name { get; set; }
+
+        public int? MastersCount { get; set; }
     }
 }
