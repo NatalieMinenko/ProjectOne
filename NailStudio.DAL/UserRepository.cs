@@ -20,7 +20,7 @@ namespace NailStudio.DAL
                 connection.Query(query, args);
             }
         }
-        public void UpdateUser(UserDto user)
+        public void UpdateUser(UsersDto user)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
@@ -32,7 +32,7 @@ namespace NailStudio.DAL
                 connection.Query(query, args);
             }
         }
-        public List<UserDto> GetAllUsers()
+        public List<UsersDto> GetAllUsers()
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
@@ -40,8 +40,21 @@ namespace NailStudio.DAL
                 string query = UserQuerys.GetAllUsersQuery;
 
                 connection.Open();
-                return connection.Query<UserDto>(query).ToList();
+                return connection.Query<UsersDto>(query).ToList();
             }
         }
+
+        public List<UsersDto> GetUsersById()
+        {
+            string conectionString = Options.ConectionString;
+            using (var connection = new NpgsqlConnection(conectionString))
+            {
+                string query = UserQuerys.GetUsersByIdQuery;
+
+                connection.Open();
+                return connection.Query<UsersDto>(query).ToList();
+            }
+        }
+
     }
 }
