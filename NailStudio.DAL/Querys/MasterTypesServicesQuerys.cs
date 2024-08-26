@@ -8,11 +8,9 @@ namespace NailStudio.DAL.Querys
 {
     public class MasterTypesServicesQuerys
     {
-        public const string AddMastersQuery = $"INSERT INTO \"MasterTypes\"(\"Name\") VALUES ('@name');";
+        public const string GetAllMasterTypesServicesQuery = $"SELECT \"ServicesId\", \"MasterTypesId\" FROM public.\"MasterTypes_Services\";";
 
-        public const string UpdateMastersQuery = $"UPDATE \"MasterTypes\" set\"Name\"=@name where \"Id\"=@id";
-
-        public const string GetAllMasterTypesQuery = $"SELECT \"Id\", \"Name\" FROM public.\"MasterTypes\";";
+        public const string GetAllCostQuery = $"SELECT \"Cost\" FROM public.\"MasterTypes_Services\";";
 
     }
 }
