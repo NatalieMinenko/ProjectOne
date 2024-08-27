@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace NailStudioBot.Core.Dtos
 {
-    internal class UserRolesDto
+    public class UserRolesDto
     {
+        public int? Id { get; set; }
+
+        public string? Name { get; set; }
+                      
     }
 }
