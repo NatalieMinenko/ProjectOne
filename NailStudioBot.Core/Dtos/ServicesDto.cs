@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace NailStudioBot.Core.Dtos
 {
-    internal class ServicesDto
+    public class ServicesDto
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Duration { get; set; }
+        public bool IsActive { get; set; }
+        public string IsDeleted { get; set; }
+
     }
 }
