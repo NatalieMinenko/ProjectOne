@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace NailStudioBot.Core.Dtos
 {
-    internal class StatusReservationsDto
+    public class StatusReservationsDto
     {
+        public int? Id { get; set; }
+
+        public string? Name { get; set; }
     }
 }
