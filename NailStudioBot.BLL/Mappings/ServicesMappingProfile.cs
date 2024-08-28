@@ -6,6 +6,10 @@ namespace mapper
 {
     public class ServicesMappingProfile: Profile
     {
-
+        public ServicesMappingProfile()
+        {
+            CreateMap<ServicesInputModel, ServicesDto>();
+            CreateMap<ServicesDto, ServicesOutputModel>();
+        }
     }
 }
