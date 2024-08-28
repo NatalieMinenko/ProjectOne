@@ -1,6 +1,11 @@
-﻿namespace mapper
+﻿using AutoMapper;
+using NailStudioBot.Core.Dtos;
+using NailStudioBot.Core.InputModels;
+using NailStudioBot.Core.OutPutModels;
+namespace mapper
 {
-    internal class ServicesMappingProfile
+    public class ServicesMappingProfile: Profile
     {
+
     }
 }
