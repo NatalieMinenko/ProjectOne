@@ -1,7 +1,7 @@
 ﻿using Dapper;
 using Npgsql;
-using NailStudioBot.DAL;
-using NailStudioBot.Core.Dtos;
+//using NailStudioBot.DAL;
+//using NailStudioBot.Core.Dtos;
 using System.Collections.Generic;
 using System.IO;
 
@@ -11,13 +11,15 @@ namespace ConsoleDliaTestov
     {
         static void Main(string[] args)
         {
-            UserRepository userRepository = new UserRepository();
 
-            userRepository.UpdateUser(new UsersDto() { Name = "AAAAA", Id = 1 });
+            Console.WriteLine(Environment.GetEnvironmentVariable("Bot"));
+            //UserRepository userRepository = new UserRepository();
 
-            var a = userRepository.GetAllUsers();
+            //userRepository.UpdateUser(new UsersDto() { Name = "AAAAA", Id = 1 });
 
-            Console.WriteLine(a.Count);
+            //var a = userRepository.GetAllUsers();
+
+            //Console.WriteLine(a.Count);
 
 
             //string conectionString = "Server=localhost; Port=5432; User Id=postgres; Password=postgres; Database=MyFirstDB;";
