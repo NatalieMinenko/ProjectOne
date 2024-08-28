@@ -62,5 +62,29 @@ namespace NailStudio.DAL
                 connection.Query(query, args);
             }
         }
+        public void FindMasterByServiceIdQuery(ServicesDto service)
+        {
+            string connectionString = Options.ConectionString;
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string query = ServicesQverys.FindMasterByServiceIdQuery;
+                var args = new { name = service.Name, id = service.Id };
+
+                connection.Open();
+                connection.Query(query, args);
+            }
+        }
+        public void NameAllServicesQuery(ServicesDto service)
+        {
+            string connectionString = Options.ConectionString;
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                string query = ServicesQverys.NameAllServicesQuery;
+                var args = new { name = service.Name, id = service.Id };
+
+                connection.Open();
+                connection.Query(query, args);
+            }
+        }
     }
 }
