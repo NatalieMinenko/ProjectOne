@@ -62,7 +62,7 @@ namespace NailStudio.DAL
                 connection.Query(query, args);
             }
         }
-        public void FindMasterByServiceIdQuery(ServicesDto service)
+        public void FindMasterByServiceId(ServicesDto service)
         {
             string connectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(connectionString))
@@ -74,7 +74,7 @@ namespace NailStudio.DAL
                 connection.Query(query, args);
             }
         }
-        public void NameAllServicesQuery(ServicesDto service)
+        public void NameAllServices(ServicesDto service)
         {
             string connectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(connectionString))
