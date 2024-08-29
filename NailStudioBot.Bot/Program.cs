@@ -2,6 +2,7 @@
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Polling;
+using NailStudioBot.Core.InputModels;
 
 namespace NailStudioBot.Bot
 {
@@ -67,10 +68,10 @@ namespace NailStudioBot.Bot
                 else if (States[id] == "add")
                 {
                     //тут будем добавлять юзера
-                    //var user = new UserInputModel()
-                    //{
-                    //    Name = message.Text,
-                    //};
+                    var user = new UsersInputModel()
+                    {
+                        Name = message.Text,
+                    };
 
                     //_userService.AddUser(user);
 
