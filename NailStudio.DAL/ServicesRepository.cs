@@ -11,7 +11,7 @@ using NailStudioBot.Core.Dtos;
 
 namespace NailStudio.DAL
 {
-    public class ServicesRepisitory
+    public class ServicesRepository
     {
         public void AddServices(string name)
         {
