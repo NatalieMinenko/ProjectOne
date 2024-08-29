@@ -3,6 +3,7 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Polling;
 using NailStudioBot.Core.InputModels;
+using NailStudioBot.BLL;
 
 namespace NailStudioBot.Bot
 {
@@ -10,13 +11,13 @@ namespace NailStudioBot.Bot
     {
         public static Dictionary<long, string> States { get; set; }
 
-        //private static UserService _userService;
+        private static UsersService _userService;
 
         public static void Main(string[] args)
         {
             States = new Dictionary<long, string>();
 
-            //_userService = new UserService();
+            _userService = new UsersService();
 
             ITelegramBotClient bot = new TelegramBotClient("6997618609:AAEIBEGrUEXn7LXUK5y33vjjPmaMsGfs6SQ");
 
@@ -73,20 +74,20 @@ namespace NailStudioBot.Bot
                         Name = message.Text,
                     };
 
-                    //_userService.AddUser(user);
+                    _userService.AddUser(user);
 
                     States[id] = "start";
                 }
                 else if (message.Text == "2" && States[id] == "start")
                 {
-                    //var users = _userService.GetAllUsers();
+                    var users = _userService.GetAllUsers();
 
-                    //string res = "";
+                    string res = "";
 
-                    //foreach (var user in users)
-                    //{
-                    //    res += $"{user.Id}-{user.Name}\n";
-                    //}
+                    foreach (var user in users)
+                    {
+                        res += $"{user.Id}-{user.Name}\n";
+                    }
 
                     await botClient.SendTextMessageAsync(message.Chat, "kk");
                 }

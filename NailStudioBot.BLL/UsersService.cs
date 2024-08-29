@@ -9,6 +9,16 @@ namespace NailStudioBot.BLL
 {
     public class UsersService
     {
+        public void AddUser(UsersInputModel user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<object> GetAllUsers()
+        {
+            throw new NotImplementedException();
+        }
+
         public class UserService
         {
             public UserRepository UserRepository { get; set; }
