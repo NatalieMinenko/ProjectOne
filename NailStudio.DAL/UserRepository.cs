@@ -14,7 +14,7 @@ namespace NailStudio.DAL
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = UserQuerys.AddUserQuery;
-                var args = new {name = name};
+                var args = new {@Name = name, @RoleId=1, @MasterTypeId=3};
 
                 connection.Open();
                 connection.Query(query, args);
