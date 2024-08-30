@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NailStudio.DAL.Querys
 {
-    public class ServicesQverys
+    public class ServicesQuerys
     {
         public const string AddServicesQuery = $"INSERT INTO \"Services\"(\"Name\", \"Duration\", \"IsActive\"," +
             $" \"IsDeleted\")\r\n VALUES (@name, @duration, @isActive, @isDeleted);\r\n \";";

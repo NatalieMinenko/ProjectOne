@@ -18,7 +18,7 @@ namespace NailStudio.DAL
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = ServicesQverys.AddServicesQuery;
+                string query = ServicesQuerys.AddServicesQuery;
                 var args = new { name = name };
 
                 connection.Open();
@@ -30,7 +30,7 @@ namespace NailStudio.DAL
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = ServicesQverys.UpdateServicesQuery;
+                string query = ServicesQuerys.UpdateServicesQuery;
                 var args = new { name = service.Name, id = service.Id };
 
                 connection.Open();
@@ -43,7 +43,7 @@ namespace NailStudio.DAL
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = ServicesQverys.GetAllServicesQuery;
+                string query = ServicesQuerys.GetAllServicesQuery;
 
                 connection.Open();
                 return connection.Query<ServicesDto>(query).ToList();
@@ -55,7 +55,7 @@ namespace NailStudio.DAL
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = ServicesQverys.DeleteServicesQuery;
+                string query = ServicesQuerys.DeleteServicesQuery;
                 var args = new { name = service.Name, id = service.Id };
 
                 connection.Open();
@@ -67,7 +67,7 @@ namespace NailStudio.DAL
             string connectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                string query = ServicesQverys.FindMasterByServiceIdQuery;
+                string query = ServicesQuerys.FindMasterByServiceIdQuery;
                 var args = new { name = service.Name, id = service.Id };
 
                 connection.Open();
@@ -79,7 +79,7 @@ namespace NailStudio.DAL
             string connectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                string query = ServicesQverys.NameAllServicesQuery;
+                string query = ServicesQuerys.NameAllServicesQuery;
                 var args = new { name = service.Name, id = service.Id };
 
                 connection.Open();
