@@ -25,6 +25,6 @@ namespace NailStudio.DAL.Querys
             $"join \"Users\" as U on U.\"MasterTypeId\" = MT.\"Id\"\r\nwhere S.\"Id\" = @id;";
 
         public const string NameAllServicesQuery = $"select \"Name\" from \"Services\"\r\nwhere \"IsActive\"=true " +
-            $"and \"IsDeleted\"=false;"
+            $"and \"IsDeleted\"=false;";
     }
 }

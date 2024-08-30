@@ -4,6 +4,8 @@ using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Polling;
 using NailStudioBot.Core.InputModels;
 using NailStudioBot.BLL;
+using NailStudioBot.BLL;
+
 
 namespace NailStudioBot.Bot
 {
@@ -11,13 +13,13 @@ namespace NailStudioBot.Bot
     {
         public static Dictionary<long, string> States { get; set; }
 
-        private static UsersService _userService;
+        private static UserService _userService;
 
         public static void Main(string[] args)
         {
             States = new Dictionary<long, string>();
 
-            _userService = new UsersService();
+            _userService = new UserService();
 
             ITelegramBotClient bot = new TelegramBotClient("6997618609:AAEIBEGrUEXn7LXUK5y33vjjPmaMsGfs6SQ");
 
@@ -61,38 +63,40 @@ namespace NailStudioBot.Bot
                     }
 
                 }
-                else if (message.Text == "1" && States[id] == "start")
+                else if (message.Text == "1")
                 {
                     States[id] = "add";
                     await botClient.SendTextMessageAsync(message.Chat, "Введите имя!");
                 }
-                else if (States[id] == "add")
+                else if (message.Text == "add")
                 {
                     //тут будем добавлять юзера
                     var user = new UsersInputModel()
                     {
                         Name = message.Text,
+                        
                     };
 
                     _userService.AddUser(user);
 
                     States[id] = "start";
                 }
-                else if (message.Text == "2" && States[id] == "start")
+                else if (message.Text == "2")
                 {
                     var users = _userService.GetAllUsers();
-
                     string res = "";
 
                     foreach (var user in users)
                     {
-                        res += $"{user.Id}-{user.Name}\n";
+                        res += $@"{user.Id} - {user.Name}
+";
                     }
 
-                    await botClient.SendTextMessageAsync(message.Chat, "kk");
+                    await botClient.SendTextMessageAsync(message.Chat, res);
                 }
             }
         }
+
 
         public static async Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
         {
