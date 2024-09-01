@@ -9,13 +9,13 @@ namespace NailStudioBot.BLL
 {
     public class ServicesServices
     {
-        public ServicesRepository ServicesRepisitory { get; set; }
+        public ServicesRepository ServicesRepository { get; set; }
 
         private Mapper _mapper;
 
         public ServicesServices()
         {
-            ServicesRepisitory = new ServicesRepository();
+            ServicesRepository = new ServicesRepository();
             var config = new MapperConfiguration(
                 cfg =>
                 {
@@ -28,12 +28,12 @@ namespace NailStudioBot.BLL
         {
             var servicesDto = _mapper.Map<ServicesDto>(service);
 
-            ServicesRepisitory.AddServices(servicesDto.Name);
+            ServicesRepository.AddServices(servicesDto.Name);
         }
 
         public List<ServicesOutputModel> GetAllServices()
         {
-            List<ServicesDto> servicesDtos = ServicesRepisitory.GetAllServices();
+            List<ServicesDto> servicesDtos = ServicesRepository.GetAllServices();
             List<ServicesOutputModel> service = _mapper.Map<List<ServicesOutputModel>>(servicesDtos);
             return service;
         }
