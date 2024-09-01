@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using Npgsql;
 using NailStudio.DAL;
 using NailStudioBot.Core.Dtos;
