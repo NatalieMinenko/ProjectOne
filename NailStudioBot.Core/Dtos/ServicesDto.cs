@@ -8,11 +8,15 @@ namespace NailStudioBot.Core.Dtos
 {
     public class ServicesDto
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Duration { get; set; }
-        public bool IsActive { get; set; }
-        public string IsDeleted { get; set; }
+        public int? Id { get; set; }
+
+        public string? Name { get; set; }
+
+        public int? Duration { get; set; }
+
+        public bool? IsActive { get; set; }
+
+        public string? IsDeleted { get; set; }
 
     }
 }

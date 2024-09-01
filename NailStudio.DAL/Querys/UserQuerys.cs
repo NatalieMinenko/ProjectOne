@@ -17,5 +17,13 @@ namespace NailStudio.DAL.Querys
         public const string GetAllUsersQuery = $"SELECT \"Id\", \"Name\" FROM public.\"Users\";";
 
         public const string GetUsersByIdQuery = $"SELECT \"Id\", \"Name\" FROM public.\"Users\" WHERE \"Id\"=@id;";
+
+        public const string DeleteUserQuery = $"DELETE FROM\"Users\"WHERE \"Id\"= @id;";
+
+        public const string GetMastersByServiceAndCost = $"select U.\"Id\", U.\"Name\", U.\"MasterTypeId\", UR.\"Name\", MT.\"Name\", S.\"Name\", MTS.\"Cost\"" +
+
+        $"from \"Users\" as U left join \"UserRoles\" as UR on U.\"RoleId\" = UR.\"Id\" left join \"MasterTypes\" as MT on U.\"MasterTypeId\"=MT.\"Id\"" +
+
+        $"join \"MasterType_Services\" as MTS on MT.\"Id\"=MTS.\"MasterTypeId\" + join \"Services\" as S on MTS.\"ServiceId\"=S.\"Id\" where UR.\"Id\" = 3";
     }
 }

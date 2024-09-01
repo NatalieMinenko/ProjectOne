@@ -20,11 +20,11 @@ namespace NailStudio.DAL.Querys
 
         public const string FindMasterByServiceIdQuery = $"select S.\"Id\", S.\"Name\", S.\"Duration\", MTS.\"Cost\", MT.\"Id\"," +
             $" MT.\"Name\", U.\"Id\", U.\"Name\"\r\n" +
-            $"from \"Services\" as S\r\njoin \"MasterType_Services\" as MTS on MTS.\"ServiceId\"= S.\"Id\"\r\n" +
+            $"from \"Services\" as S\r\n join \"MasterType_Services\" as MTS on MTS.\"ServiceId\"= S.\"Id\"\r\n" +
             $"join \"MasterTypes\" as MT on MT.\"Id\" = MTS.\"MasterTypeId\"\r\n" +
-            $"join \"Users\" as U on U.\"MasterTypeId\" = MT.\"Id\"\r\nwhere S.\"Id\" = @id;";
+            $"join \"Users\" as U on U.\"MasterTypeId\" = MT.\"Id\"\r\n where S.\"Id\" = @id;";
 
-        public const string NameAllServicesQuery = $"select \"Name\" from \"Services\"\r\nwhere \"IsActive\"=true " +
+        public const string NameAllServicesQuery = $"select \"Name\" from \"Services\"\r\n where \"IsActive\" = true " +
             $"and \"IsDeleted\"=false;";
     }
 }

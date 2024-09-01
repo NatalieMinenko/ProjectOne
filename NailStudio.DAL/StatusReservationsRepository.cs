@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NailStudio.DAL.Querys
+namespace NailStudio.DAL
 {
-    internal class UserRoles
+    internal class StatusReservationsRepository
     {
     }
 }

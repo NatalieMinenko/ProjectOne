@@ -12,4 +12,9 @@
     <PackageReference Include="Npgsql" Version="8.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NailStudio.DAL\NailStudio.DAL.csproj" />
+    <ProjectReference Include="..\NailStudioBot.Core\NailStudioBot.Core.csproj" />
+  </ItemGroup>
+
 </Project>
