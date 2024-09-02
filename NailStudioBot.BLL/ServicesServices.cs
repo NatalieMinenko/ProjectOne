@@ -24,11 +24,10 @@ namespace NailStudioBot.BLL
             _mapper = new Mapper(config);
         }
 
-        public void AddServices(ServicesInputModel service)
+        public void AddService(ServicesInputModel service)
         {
             var servicesDto = _mapper.Map<ServicesDto>(service);
-
-            ServicesRepository.AddServices(servicesDto.Name);
+            ServicesRepository.AddServices(servicesDto);
         }
 
         public List<ServicesOutputModel> GetAllServices()
@@ -37,6 +36,29 @@ namespace NailStudioBot.BLL
             List<ServicesOutputModel> service = _mapper.Map<List<ServicesOutputModel>>(servicesDtos);
             return service;
         }
+
+        public void UpdateService(int id, ServicesInputModel service)
+        {
+            var servicesDto = _mapper.Map<ServicesDto>(service);
+            servicesDto.Id = id;
+            ServicesRepository.UpdateServices(servicesDto);
+        }
+
+        public void DeleteService(int id)
+        {
+            ServicesRepository.DeleteServices(id);
+        }
+
+        //public ServicesOutputModel FindMasterByServiceId(int id)
+        //{
+        //    var servicesDto = ServicesRepository.FindMasterByServiceId(id);
+        //    return _mapper.Map<ServicesOutputModel>(servicesDto);
+        //}
+        //public List<ServicesOutputModel> GetAllServices()
+        //{
+        //    List<ServicesDto> servicesDtos = ServicesRepository.GetAllServices();       //Хз чёт эти 2 метода ошибки выдают, нужно посмотреть 
+        //    return _mapper.Map<List<ServicesOutputModel>>(servicesDtos);
+        //}
 
     }
 }
