@@ -15,4 +15,4 @@ namespace NailStudio.DAL.Querys
         public const string DeleteStatusByIdQuery = "DELETE FROM \"StatusReservations\" WHERE \"Id\" = @Id;";
     }
 }
-}
+
