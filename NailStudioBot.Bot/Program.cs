@@ -1,16 +1,22 @@
-﻿using Telegram.Bot;
+using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Polling;
 using NailStudioBot.Core.InputModels;
 using NailStudioBot.BLL;
-using NailStudioBot.BLL;
+using NailStudio.DAL;
+using System.Xml.Linq;
 
 
 namespace NailStudioBot.Bot
+
+        
+
 {
     public class Program
     {
+        
+
         public static Dictionary<long, string> States { get; set; }
 
         private static UserService _userService;

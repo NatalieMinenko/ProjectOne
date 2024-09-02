@@ -1,72 +1,75 @@
+﻿using NailStudio.DAL.Querys;
+using NailStudioBot.Core.Dtos;
 using Dapper;
 using Npgsql;
 using NailStudioBot.Core;
-using NailStudio.DAL.Querys;
-using NailStudioBot.Core.Dtos;
+
 
 namespace NailStudio.DAL
 {
-    public class UserRepository
+    public class UserRolesRepository
     {
-        public void AddUser(string name)
+        public void AddUserRoles(string name)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = UserQuerys.AddUserQuery;
-                var args = new {@Name = name, @RoleId=1, @MasterTypeId=3};
+                string query = UserRolesQuerys.AddUserRolesQuery;
+                var args = new { @Name = name, Id = 4 };
 
                 connection.Open();
                 connection.Query(query, args);
             }
         }
-        public void UpdateUser(UsersDto user)
+        public void UpdateUserRoles(UserRolesDto userRoles)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = UserQuerys.UpdateUserQuery;
-                var args = new {name = user.Name, id = user.Id };
+                string query = UserRolesQuerys.UpdateUserRolesQuery;
+                var args = new { name = userRoles.Name, id = userRoles.Id };
 
                 connection.Open();
                 connection.Query(query, args);
             }
         }
-        public List<UsersDto> GetAllUsers()
+        public List<UserRolesDto> GetAllUserRoles()
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = UserQuerys.GetAllUsersQuery;
+                string query = UserRolesQuerys.GetAllUserRolesQuery;
 
                 connection.Open();
-                return connection.Query<UsersDto>(query).ToList();
+                return connection.Query<UserRolesDto>(query).ToList();
             }
         }
 
-        public List<UsersDto> GetUsersById()
+        public List<UsersDto> GetUserRolesById()
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = UserQuerys.GetUsersByIdQuery;
+                string query = UserRolesQuerys.GetUserRolesByIdQuery;
 
                 connection.Open();
-                return connection.Query<UsersDto>(query).ToList();
+                return connection.Query<UserRolesDto>(query).ToList();
             }
         }
 
-        public void DeleteUsers(UsersDto user)
+        public void DeleteUserRoles(UserRolesDto userRoles)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = UserQuerys.DeleteUserQuery;
-                var args = new { name = user.Name, id = user.Id };
+                string query = UserRolesQuerys.DeleteUserRolesQuery;
+                var args = new { name = userRoles.Name, id = userRoles.Id };
 
                 connection.Open();
                 connection.Query(query, args);
             }
         }
     }
+
+
 }
