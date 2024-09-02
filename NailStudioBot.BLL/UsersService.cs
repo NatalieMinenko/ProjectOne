@@ -39,6 +39,18 @@ namespace NailStudioBot.BLL
             List<UsersOutputModel> users = _mapper.Map<List<UsersOutputModel>>(userDtos);
             return users;
         }
+
+        public UsersOutputModel GetUsersById(int id)
+        {
+            var userDto = UserRepository.GetUsersById(id);
+            return _mapper.Map<UsersOutputModel>(userDto);
+        }
+
+        public void UpdateUser(UsersInputModel user)
+        {
+            var userDto = _mapper.Map<UsersDto>(user);
+            UserRepository.UpdateUser(userDto);
+        }
     }
 
 }

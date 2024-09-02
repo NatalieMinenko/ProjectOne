@@ -8,10 +8,10 @@ namespace NailStudio.DAL.Querys
 {
     public class ServicesQuerys
     {
-        public const string AddServicesQuery = $"INSERT INTO \"Services\"(\"Name\", \"Duration\", \"IsActive\"," +
-            $" \"IsDeleted\")\r\n VALUES (@name, @duration, @isActive, @isDeleted);\r\n \";";
+        public const string AddServicesQuery = $"INSERT INTO \"Services\"(\"Name\", \"Duration\", \"IsActive\", \"IsDeleted\")\r\n  " +
+            $"  VALUES (name, duration, is_active, is_deleted);";
 
-        public const string GetAllServicesQuery = $"SELECT \" Id \",Name\", Duration\", IsActive\"IsDeleted\" FROM.public\"Services";
+        public const string GetAllServicesQuery = $" SELECT \"Id\", \"Name\", \"Duration\", \"IsActive\", \"IsDeleted\"\r\n    FROM \"Services\";";
 
         public const string UpdateServicesQuery = $"UPDATE\"Services\"SET\"Name\"= @name,\"Duration\"= @duration," +
             $"\"IsActive\" = @isActive\"IsDeleted\" = @isDeleted\" WHERE \"Id\"= @id;";

@@ -51,6 +51,10 @@ namespace NailStudioBot.Bot
             {
                 var message = update.Message;
                 var id = message.Chat.Id;
+                if (!States.ContainsKey(id))
+                {
+                    States[id] = "start";
+                }
 
                 if (message.Text.ToLower() == "/start")
                 {
@@ -94,6 +98,48 @@ namespace NailStudioBot.Bot
 
                     await botClient.SendTextMessageAsync(message.Chat, res);
                 }
+                else if (message.Text == "3")
+                {
+                    States[id] = "update";
+                    await botClient.SendTextMessageAsync(message.Chat, "Введите ID пользователя, которого хотите обновить:");
+                }
+                else if (States[id] == "update")
+                {
+                    if (int.TryParse(message.Text, out int userId))
+                    {
+                        var user = _userService.GetUsersById(userId);
+                        if (user != null)
+                        {
+                            States[id] = "update_name";
+                            await botClient.SendTextMessageAsync(message.Chat, "Введите новое имя:");
+                        }
+                        else
+                        {
+                            await botClient.SendTextMessageAsync(message.Chat, "Пользователь с таким ID не найден.");
+                            States[id] = "start";
+                        }
+                    }
+                    else
+                    {
+                        await botClient.SendTextMessageAsync(message.Chat, "Неверный формат ID.");
+                        States[id] = "start";
+                    }
+                }
+                else if (States[id] == "update_name")
+                {
+                    var user = new UsersInputModel()
+                    {
+                        Id = userId,
+                        Name = message.Text,
+                    };
+
+                    _userService.UpdateUser(user);
+                    await botClient.SendTextMessageAsync(message.Chat, "Пользователь обновлен!");
+                    States[id] = "start";
+                }
+
+
+
             }
         }
 
