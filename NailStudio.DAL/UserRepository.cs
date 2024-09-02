@@ -44,7 +44,7 @@ namespace NailStudio.DAL
             }
         }
 
-        public List<UsersDto> GetUsersById()
+        public List<UsersDto> GetUsersById(int id)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
