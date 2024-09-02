@@ -45,12 +45,13 @@ namespace NailStudio.DAL
             }
         }
 
-        public List<UsersDto> GetUserRolesById()
+        public List<UserRolesDto> GetUserRolesById(int id)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = UserRolesQuerys.GetUserRolesByIdQuery;
+                var args = new { Id = id };
 
                 connection.Open();
                 return connection.Query<UserRolesDto>(query).ToList();

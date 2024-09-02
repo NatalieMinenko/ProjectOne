@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace NailStudio.DAL.Querys
 {
-    internal class StatusReservations
+    public class StatusReservations
     {
+         
+        public const string GetAllStatusesQuery = "SELECT \"Id\", \"Name\" FROM \"StatusReservations\";";
+        public const string InsertStatusQuery = "INSERT INTO \"StatusReservations\"(\"Name\") VALUES (@Name);";
+        public const string UpdateStatusQuery = "UPDATE \"StatusReservations\" SET \"Name\" = @Name WHERE \"Id\" = @Id;";
+        public const string DeleteStatusByIdQuery = "DELETE FROM \"StatusReservations\" WHERE \"Id\" = @Id;";
     }
 }
+

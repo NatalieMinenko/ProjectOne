@@ -13,13 +13,13 @@ namespace NailStudio.DAL
 {
     public class ServicesRepository
     {
-        public void AddServices(string name)
+        public void AddServices(string name, int duration, bool isActive, bool isDeleted)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = ServicesQuerys.AddServicesQuery;
-                var args = new { name = name };
+                var args = new { name, duration, isActive, isDeleted };
 
                 connection.Open();
                 connection.Query(query, args);
@@ -31,7 +31,7 @@ namespace NailStudio.DAL
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = ServicesQuerys.UpdateServicesQuery;
-                var args = new { name = service.Name, id = service.Id };
+                var args = new { service.Name, service.Duration, service.IsActive, service.IsDeleted, service.Id };
 
                 connection.Open();
                 connection.Query(query, args);
@@ -50,13 +50,13 @@ namespace NailStudio.DAL
             }
         }
 
-        public void DeleteServices(ServicesDto service)
+        public void DeleteServices(int id)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = ServicesQuerys.DeleteServicesQuery;
-                var args = new { name = service.Name, id = service.Id };
+                var args = new {id};
 
                 connection.Open();
                 connection.Query(query, args);
@@ -68,7 +68,7 @@ namespace NailStudio.DAL
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 string query = ServicesQuerys.FindMasterByServiceIdQuery;
-                var args = new { name = service.Name, id = service.Id };
+                var args = new { id = service.Id };
 
                 connection.Open();
                 connection.Query(query, args);
