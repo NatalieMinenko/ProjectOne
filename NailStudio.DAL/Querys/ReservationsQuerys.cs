@@ -18,9 +18,6 @@ namespace NailStudio.DAL.Querys
         public const string DeleteReservationByIdQuery = $"DELETE FROM \"Reservations\" WHERE \"Id\" = @Id;";
 
 
-        public const string UpdateReservationQuery = $"INSERT INTO \"Reservations\"(\"StartDateTime\", \"Sum\", \"ClientId\", \"StatusId\", \"IsAction\")\r\n  " +
-            $"  VALUES (start_date_time, sum_amount, client_id, status_id, is_action);";
-
     }
 }
 
