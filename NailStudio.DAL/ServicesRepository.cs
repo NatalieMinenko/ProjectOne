@@ -13,18 +13,25 @@ namespace NailStudio.DAL
 {
     public class ServicesRepository
     {
-        public void AddServices(string name, int duration, bool isActive, bool isDeleted)
+        public void AddServices(ServicesDto services)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = ServicesQuerys.AddServicesQuery;
-                var args = new { name, duration, isActive, isDeleted };
+                var args = new
+                {
+                    name = services.Name,
+                    duration = services.Duration,
+                    isActive = services.IsActive,
+                    isDeleted = services.IsDeleted
+                };
 
                 connection.Open();
-                connection.Query(query, args);
+                connection.Execute(query, args);
             }
         }
+        
         public void UpdateServices(ServicesDto service)
         {
             string conectionString = Options.ConectionString;
