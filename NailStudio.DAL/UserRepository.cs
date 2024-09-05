@@ -44,17 +44,17 @@ namespace NailStudio.DAL
             }
         }
 
-        //public List<UsersDto> GetUsersById(int id)
-        //{
-        //    string conectionString = Options.ConectionString;
-        //    using (var connection = new NpgsqlConnection(conectionString))
-        //    {
-        //        string query = UserQuerys.GetUsersByIdQuery;
-        //        
-        //        connection.Open();
-        //        return connection.Query<UsersDto>(query).ToList();
-        //    }
-        //}
+        public List<UsersDto> GetUsersById(int id)
+        {
+            string conectionString = Options.ConectionString;
+            using (var connection = new NpgsqlConnection(conectionString))
+            {
+                string query = UserQuerys.GetUsersByIdQuery;
+
+                connection.Open();
+                return connection.Query<UsersDto>(query).ToList();
+            }
+        }
 
         public void DeleteUsers(int id)
         {
