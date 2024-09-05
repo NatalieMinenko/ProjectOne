@@ -15,33 +15,42 @@ namespace ConsoleDliaTestov
 
             Console.WriteLine(Environment.GetEnvironmentVariable("Bot"));
 
-            //1.Users - “ест Add/Update/GetAllUsers Users - работает.
+            //1,2,3.Users - “ест Add/Update/GetAllUsers Users - работает.
             //UserRepository userRepository = new UserRepository();
             //userRepository.AddUser("Svetik");
             //userRepository.UpdateUser(new UsersDto() { Name = "Ksenia", Id = 5 });
             //var a = userRepository.GetAllUsers();
 
-            UserRepository userRepository = new UserRepository();
-            userRepository.AddUser("TestTest2");
-            var a = userRepository.GetAllUsers();
+            //UserRepository userRepository = new UserRepository();
+            //userRepository.AddUser("TestTest2");
+            //var a = userRepository.GetAllUsers();
 
-            //2.Users - GetUsersById 
-            //UserRepository userRepository = new UserRepository(2);
-            //var a = userRepository.GetUsersById();
+            //4.Users - GetUsersById - работает
+            //UserRepository userRepository2 = new UserRepository();
+            //var a = userRepository2.GetUsersById(2);
 
-            //3.Users - DeleteUsers - работает
+            //5.Users - DeleteUsers - работает
             //UserRepository userRepository1 = new UserRepository();
-            //userRepository1.DeleteUsers(48);
+            //userRepository1.DeleteUsers(58);
             //var a = userRepository1.GetAllUsers();
 
-            //Console.WriteLine();
-
-            //4.UserRoles - Add|GetAll UserRoles - работает!
+            //1,2,3.UserRoles - Add|GetAll UserRoles - работает!
             //UserRolesRepository userRolesRepository = new UserRolesRepository();
-            //userRolesRepository.AddUserRoles("Test");
+            //userRolesRepository.AddUserRoles("TestRoles");
+            //userRolesRepository.UpdateUserRoles(new UserRolesDto() { Name = "QQQ", Id = 100 });
             //var a = userRolesRepository.GetAllUserRoles();
 
-            //Console.WriteLine(a.Count);
+            //4. UserRoles - GetUserRolesId - работает
+            //UserRolesRepository userRolesRepository = new UserRolesRepository();
+            //var a = userRolesRepository.GetUserRolesById(1);
+
+            //5. UserRoles - DeleteUserRoles - работает
+            //UserRolesRepository userRolesRepository = new UserRolesRepository();
+            //userRolesRepository.DeleteUserRoles(100);
+            //var a = userRolesRepository.GetAllUserRoles();
+
+
+
 
             //ServicesServices servicesServices = new ServicesServices();
             //var gg = servicesServices.GetAllServices();
