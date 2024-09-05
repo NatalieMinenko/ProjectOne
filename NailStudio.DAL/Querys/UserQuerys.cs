@@ -14,7 +14,7 @@ namespace NailStudio.DAL.Querys
 
         public const string GetAllUsersQuery = $"SELECT \"Id\", \"Name\" FROM public.\"Users\";";
 
-        public const string GetUsersByIdQuery = $"SELECT \"Id\" FROM public.\"Users\" WHERE \"Id\"=@id;";
+        public const string GetUsersByIdQuery = $"SELECT \"Id\", \"Name\" FROM public.\"Users\" WHERE \"Id\"=@id;";
 
         public const string DeleteUserQuery = $"DELETE FROM public.\"Users\" WHERE \"Id\" = @id;";
 
