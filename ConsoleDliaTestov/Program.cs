@@ -49,6 +49,16 @@ namespace ConsoleDliaTestov
             //userRolesRepository.DeleteUserRoles(100);
             //var a = userRolesRepository.GetAllUserRoles();
 
+            //1,2,3. StatusReservations - GetAllStatuses - работает
+            //StatusReservationsRepository statusReservationsRepository = new StatusReservationsRepository();
+            //statusReservationsRepository.AddStatus("Test");
+            //statusReservationsRepository.UpdateStatus(new StatusReservationsDto() { Name = "Test2", Id = 6 });
+            //var a = statusReservationsRepository.GetAllStatuses();
+
+            //4 - StatusReservations - DeleteStatusById - работает!
+            //StatusReservationsRepository statusReservationsRepository = new StatusReservationsRepository();
+            //statusReservationsRepository.DeleteStatusById(6);
+            //var a = statusReservationsRepository.GetAllStatuses();
 
 
 
