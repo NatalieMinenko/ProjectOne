@@ -15,7 +15,7 @@ namespace NailStudio.DAL
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = UserRolesQuerys.AddUserRolesQuery;
-                var args = new { @Name = name, Id = 4 };
+                var args = new { Name = name };
 
                 connection.Open();
                 connection.Query(query, args);
@@ -64,7 +64,7 @@ namespace NailStudio.DAL
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = UserRolesQuerys.DeleteUserRolesQuery;
-                var args = new { name = userRoles.Name, id = userRoles.Id };
+                var args = new { id = userRoles.Id };
 
                 connection.Open();
                 connection.Query(query, args);

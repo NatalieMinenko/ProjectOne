@@ -14,7 +14,7 @@ namespace NailStudio.DAL
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = UserQuerys.AddUserQuery;
-                var args = new {@Name = name, @RoleId=1, @MasterTypeId=3};
+                var args = new { Name = name, RoleId=1, MasterTypeId = 3 };
 
                 connection.Open();
                 connection.Query(query, args);
@@ -44,25 +44,25 @@ namespace NailStudio.DAL
             }
         }
 
-        public List<UsersDto> GetUsersById(int id)
-        {
-            string conectionString = Options.ConectionString;
-            using (var connection = new NpgsqlConnection(conectionString))
-            {
-                string query = UserQuerys.GetUsersByIdQuery;
+        //public List<UsersDto> GetUsersById(int id)
+        //{
+        //    string conectionString = Options.ConectionString;
+        //    using (var connection = new NpgsqlConnection(conectionString))
+        //    {
+        //        string query = UserQuerys.GetUsersByIdQuery;
+        //        
+        //        connection.Open();
+        //        return connection.Query<UsersDto>(query).ToList();
+        //    }
+        //}
 
-                connection.Open();
-                return connection.Query<UsersDto>(query).ToList();
-            }
-        }
-
-        public void DeleteUsers(UsersDto user)
+        public void DeleteUsers(int id)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = UserQuerys.DeleteUserQuery;
-                var args = new { name = user.Name, id = user.Id };
+                var args = new { id };
 
                 connection.Open();
                 connection.Query(query, args);

@@ -8,15 +8,15 @@ namespace NailStudio.DAL.Querys
 {
     public class UserQuerys
     {
-        public const string AddUserQuery = $"INSERT INTO \"Users\"(\"Name\", \"RoleId\", \"MasterTypeId\") VALUES (@Name, @RoleId,@MasterTypeId);";
+        public const string AddUserQuery = $"INSERT INTO \"Users\"(\"Name\", \"RoleId\", \"MasterTypeId\") VALUES (@Name, @RoleId, @MasterTypeId);";
 
         public const string UpdateUserQuery=$"UPDATE \"Users\" set\"Name\"=@name where \"Id\"=@id";
 
         public const string GetAllUsersQuery = $"SELECT \"Id\", \"Name\" FROM public.\"Users\";";
 
-        public const string GetUsersByIdQuery = $"SELECT \"Id\", \"Name\" FROM public.\"Users\" WHERE \"Id\"=@id;";
+        public const string GetUsersByIdQuery = $"SELECT \"Id\" FROM public.\"Users\" WHERE \"Id\"=@id;";
 
-        public const string DeleteUserQuery = $"DELETE FROM\"Users\"WHERE \"Id\"= @id;";
+        public const string DeleteUserQuery = $"DELETE FROM public.\"Users\" WHERE \"Id\" = @id;";
 
         public const string GetMastersByServiceAndCost = $"select U.\"Id\", U.\"Name\", U.\"MasterTypeId\", UR.\"Name\", MT.\"Name\", S.\"Name\", MTS.\"Cost\"" +
 
