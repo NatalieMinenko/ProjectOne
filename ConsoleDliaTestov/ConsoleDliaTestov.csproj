@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NailStudio.DAL\NailStudio.DAL.csproj" />
+    <ProjectReference Include="..\NailStudioBot.BLL\NailStudioBot.BLL.csproj" />
     <ProjectReference Include="..\NailStudioBot.Core\NailStudioBot.Core.csproj" />
   </ItemGroup>
 
