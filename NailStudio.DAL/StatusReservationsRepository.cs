@@ -18,20 +18,20 @@ namespace NailStudio.DAL
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = StatusReservations.GetAllStatusesQuery;
+                string query = StatusReservationsQuery.GetAllStatusesQuery;
 
                 connection.Open();
                 return connection.Query<StatusReservationsDto>(query).ToList();
             }
         }
 
-        public void InsertStatus(StatusReservationsDto status)
+        public void AddStatus(string name)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = StatusReservations.InsertStatusQuery;
-                var args = new { status.Name };
+                string query = StatusReservationsQuery.AddStatusQuery;
+                var args = new { name };
 
                 connection.Open();
                 connection.Execute(query, args);
@@ -43,7 +43,7 @@ namespace NailStudio.DAL
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = StatusReservations.UpdateStatusQuery;
+                string query = StatusReservationsQuery.UpdateStatusQuery;
                 var args = new { status.Name, status.Id };
 
                 connection.Open();
@@ -56,7 +56,7 @@ namespace NailStudio.DAL
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = StatusReservations.DeleteStatusByIdQuery;
+                string query = StatusReservationsQuery.DeleteStatusByIdQuery;
                 var args = new { id };
 
                 connection.Open();
