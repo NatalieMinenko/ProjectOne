@@ -51,20 +51,20 @@ namespace NailStudio.DAL
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = UserRolesQuerys.GetUserRolesByIdQuery;
-                var args = new { Id = id };
+                var args = new { id };
 
                 connection.Open();
                 return connection.Query<UserRolesDto>(query).ToList();
             }
         }
 
-        public void DeleteUserRoles(UserRolesDto userRoles)
+        public void DeleteUserRoles(int id)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = UserRolesQuerys.DeleteUserRolesQuery;
-                var args = new { id = userRoles.Id };
+                var args = new { id };
 
                 connection.Open();
                 connection.Query(query, args);
