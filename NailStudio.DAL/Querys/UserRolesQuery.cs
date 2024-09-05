@@ -8,9 +8,9 @@ namespace NailStudio.DAL.Querys
 {
     public class UserRolesQuerys
     {
-        public const string AddUserRolesQuery = $"INSERT INTO public.\"UserRoles\"(\"Name\") VALUES(@Name);";
+        public const string AddUserRolesQuery = $"INSERT INTO public.\"UserRoles\"(\"Name\") VALUES (@Name);";
         
-        public const string UpdateUserRolesQuery = $"UPDATE public.\"UserRoles\" set\"Name\"=@name where \"Id\"=@id";
+        public const string UpdateUserRolesQuery = $"UPDATE public.\"UserRoles\" set \"Name\"=@name where \"Id\"=@id";
 
         public const string GetAllUserRolesQuery = $"SELECT \"Id\", \"Name\" FROM public.\"UserRoles\";";
 
