@@ -40,11 +40,11 @@ namespace NailStudioBot.BLL
             return users;
         }
 
-        //public UsersOutputModel GetUsersById(int id)
-        //{
-        //    var userDto = UserRepository.GetUsersById(id);
-        //    return _mapper.Map<UsersOutputModel>(userDto);
-        //}
+        public UsersOutputModel GetUsersById(int id)
+        {
+            var userDto = UserRepository.GetUsersById(id);
+            return _mapper.Map<UsersOutputModel>(userDto);
+        }
 
         public void UpdateUser(UsersInputModel user)
         {
