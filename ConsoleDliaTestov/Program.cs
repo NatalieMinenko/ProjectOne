@@ -60,11 +60,30 @@ namespace ConsoleDliaTestov
             //statusReservationsRepository.DeleteStatusById(6);
             //var a = statusReservationsRepository.GetAllStatuses();
 
+            //1 - MasterTypesServices - TODO!!!!!!!!!!!!
+            //MasterTypesServicesRepository masterTypesServicesRepository = new MasterTypesServicesRepository();
+            //var a = masterTypesServicesRepository.GetAllMasterTypesServices();
+
+            //1,2,3. MasterTypes - Add/Update/Get/Delete - работает
+            //MasterTypesRepository masterTypesRepository = new MasterTypesRepository();
+            //masterTypesRepository.AddMasters("Test3");
+            //masterTypesRepository.UpdateMasters(new MasterTypesDto()  { Name = "Test2", Id = 10 });
+            //var a = masterTypesRepository.GetAllMasterTypes();
+            //MasterTypesRepository masterTypesRepository = new MasterTypesRepository();
+            //masterTypesRepository.DeleteMasterTypesById(7);
+            //var a = masterTypesRepository.GetAllMasterTypes();
 
 
             //ServicesServices servicesServices = new ServicesServices();
             //var gg = servicesServices.GetAllServices();
             //Console.WriteLine();
+            //Работает
+            //ReservationsRepository reservationsRepository = new ReservationsRepository();
+            //reservationsRepository.InsertReservation(new ReservationsDto() { ClientId = 3, StartDateTime = new DateTime(2015, 7, 20, 18, 30, 25), Sum=1000, IsAction=true});
+            //ReservationsRepository reservationsRepository = new ReservationsRepository();
+            //reservationsRepository.DeleteReservationById(10);
+            //reservationsRepository.UpdateReservation(new ReservationsDto() { Id = 1, IsAction = false, StartDateTime= new DateTime(2015, 7, 20, 18, 30, 25), StatusId=2 });
+            //var c =reservationsRepository.GetAllReservations();+
 
 
             //string conectionString = "Server=localhost; Port=5432; User Id=postgres; Password=postgres; Database=MyFirstDB;";
