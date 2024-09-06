@@ -19,20 +19,20 @@ namespace NailStudio.DAL
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = MasterTypesQuerys.AddMastersQuery;
-                var args = new { name = name };
+                var args = new { Name = name };
 
                 connection.Open();
                 connection.Query(query, args);
             }
         }
 
-        public void UpdateMasters(MasterTypesDto user)
+        public void UpdateMasters(MasterTypesDto masterTypes)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
-                string query = UserQuerys.UpdateUserQuery;
-                var args = new { name = user.Name, id = user.Id };
+                string query = MasterTypesQuerys.UpdateMastersQuery;
+                var args = new { name = masterTypes.Name, id = masterTypes.Id };
 
                 connection.Open();
                 connection.Query(query, args);
@@ -47,6 +47,18 @@ namespace NailStudio.DAL
 
                 connection.Open();
                 return connection.Query<MasterTypesDto>(query).ToList();
+            }
+        }
+        public void DeleteMasterTypesById(int id)
+        {
+            string conectionString = Options.ConectionString;
+            using (var connection = new NpgsqlConnection(conectionString))
+            {
+                string query = MasterTypesQuerys.DeleteMasterTypesByIdQuery;
+                var args = new { id };
+
+                connection.Open();
+                connection.Query(query, args);
             }
         }
     }

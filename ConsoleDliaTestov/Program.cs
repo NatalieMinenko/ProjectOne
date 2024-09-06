@@ -15,7 +15,7 @@ namespace ConsoleDliaTestov
 
             Console.WriteLine(Environment.GetEnvironmentVariable("Bot"));
 
-            //1,2,3.Users - Тест Add/Update/GetAllUsers Users - работает.
+            //1,2,3.Users - пїЅпїЅпїЅпїЅ Add/Update/GetAllUsers Users - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
             //UserRepository userRepository = new UserRepository();
             //userRepository.AddUser("Svetik");
             //userRepository.UpdateUser(new UsersDto() { Name = "Ksenia", Id = 5 });
@@ -25,54 +25,65 @@ namespace ConsoleDliaTestov
             //userRepository.AddUser("TestTest2");
             //var a = userRepository.GetAllUsers();
 
-            //4.Users - GetUsersById - работает
+            //4.Users - GetUsersById - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             //UserRepository userRepository2 = new UserRepository();
             //var a = userRepository2.GetUsersById(2);
 
-            //5.Users - DeleteUsers - работает
+            //5.Users - DeleteUsers - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             //UserRepository userRepository1 = new UserRepository();
             //userRepository1.DeleteUsers(58);
             //var a = userRepository1.GetAllUsers();
 
-            //1,2,3.UserRoles - Add|GetAll UserRoles - работает!
+            //1,2,3.UserRoles - Add|GetAll UserRoles - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!
             //UserRolesRepository userRolesRepository = new UserRolesRepository();
             //userRolesRepository.AddUserRoles("TestRoles");
             //userRolesRepository.UpdateUserRoles(new UserRolesDto() { Name = "QQQ", Id = 100 });
             //var a = userRolesRepository.GetAllUserRoles();
 
-            //4. UserRoles - GetUserRolesId - работает
+            //4. UserRoles - GetUserRolesId - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             //UserRolesRepository userRolesRepository = new UserRolesRepository();
             //var a = userRolesRepository.GetUserRolesById(1);
 
-            //5. UserRoles - DeleteUserRoles - работает
+            //5. UserRoles - DeleteUserRoles - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             //UserRolesRepository userRolesRepository = new UserRolesRepository();
             //userRolesRepository.DeleteUserRoles(100);
             //var a = userRolesRepository.GetAllUserRoles();
 
-            //1,2,3. StatusReservations - GetAllStatuses - работает
+            //1,2,3. StatusReservations - GetAllStatuses - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             //StatusReservationsRepository statusReservationsRepository = new StatusReservationsRepository();
             //statusReservationsRepository.AddStatus("Test");
             //statusReservationsRepository.UpdateStatus(new StatusReservationsDto() { Name = "Test2", Id = 6 });
             //var a = statusReservationsRepository.GetAllStatuses();
 
-            //4 - StatusReservations - DeleteStatusById - работает!
+            //4 - StatusReservations - DeleteStatusById - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!
             //StatusReservationsRepository statusReservationsRepository = new StatusReservationsRepository();
             //statusReservationsRepository.DeleteStatusById(6);
             //var a = statusReservationsRepository.GetAllStatuses();
 
+            //1 - MasterTypesServices - TODO!!!!!!!!!!!!
+            //MasterTypesServicesRepository masterTypesServicesRepository = new MasterTypesServicesRepository();
+            //var a = masterTypesServicesRepository.GetAllMasterTypesServices();
+
+            //1,2,3. MasterTypes - Add/Update/Get/Delete - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+            //MasterTypesRepository masterTypesRepository = new MasterTypesRepository();
+            //masterTypesRepository.AddMasters("Test3");
+            //masterTypesRepository.UpdateMasters(new MasterTypesDto()  { Name = "Test2", Id = 10 });
+            //var a = masterTypesRepository.GetAllMasterTypes();
+            //MasterTypesRepository masterTypesRepository = new MasterTypesRepository();
+            //masterTypesRepository.DeleteMasterTypesById(7);
+            //var a = masterTypesRepository.GetAllMasterTypes();
 
 
             //ServicesServices servicesServices = new ServicesServices();
             //var gg = servicesServices.GetAllServices();
             //Console.WriteLine();
-            //Работает
+            //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             //ReservationsRepository reservationsRepository = new ReservationsRepository();
             //reservationsRepository.InsertReservation(new ReservationsDto() { ClientId = 3, StartDateTime = new DateTime(2015, 7, 20, 18, 30, 25), Sum=1000, IsAction=true});
             //ReservationsRepository reservationsRepository = new ReservationsRepository();
             //reservationsRepository.DeleteReservationById(10);
             //reservationsRepository.UpdateReservation(new ReservationsDto() { Id = 1, IsAction = false, StartDateTime= new DateTime(2015, 7, 20, 18, 30, 25), StatusId=2 });
             //var c =reservationsRepository.GetAllReservations();+
-      
 
             //string conectionString = "Server=localhost; Port=5432; User Id=postgres; Password=postgres; Database=MyFirstDB;";
             //using (var connection = new NpgsqlConnection(conectionString))
