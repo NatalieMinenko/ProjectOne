@@ -93,5 +93,6 @@ namespace NailStudio.DAL
                 connection.Query(query, args);
             }
         }
+
     }
 }
