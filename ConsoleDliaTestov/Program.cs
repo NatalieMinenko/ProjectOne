@@ -5,6 +5,8 @@ using NailStudioBot.Core.Dtos;
 using System.Collections.Generic;
 using System.IO;
 using NailStudioBot.BLL;
+using NailStudio.DAL.Querys;
+using System.Xml;
 
 namespace ConsoleDliaTestov
 {
@@ -13,7 +15,7 @@ namespace ConsoleDliaTestov
         static void Main(string[] args)
         {
 
-            Console.WriteLine(Environment.GetEnvironmentVariable("Bot"));
+            //Console.WriteLine(Environment.GetEnvironmentVariable("Bot"));
 
             //1,2,3.Users - ���� Add/Update/GetAllUsers Users - ��������.
             //UserRepository userRepository = new UserRepository();
@@ -84,6 +86,33 @@ namespace ConsoleDliaTestov
             //reservationsRepository.DeleteReservationById(10);
             //reservationsRepository.UpdateReservation(new ReservationsDto() { Id = 1, IsAction = false, StartDateTime= new DateTime(2015, 7, 20, 18, 30, 25), StatusId=2 });
             //var c =reservationsRepository.GetAllReservations();+
+
+
+            // ������!
+            //1 AddServices 
+            //ServicesRepository servicesRepository = new ServicesRepository();
+            //servicesRepository.AddServices(new ServicesDto() { Name = "VipManicure", Duration = 60, IsActive = true, IsDeleted = false });
+            //var services = servicesRepository.GetAllServices();
+
+            //Console.WriteLine(services.Count);
+
+            //2 DeleteServices
+            //ServicesRepository servicesRepository = new ServicesRepository();
+            //servicesRepository.DeleteServices(7);
+
+            //Console.WriteLine(services.Count);
+
+            //3 UpdateServices
+            //ServicesRepository servicesRepository = new ServicesRepository();
+            //servicesRepository.UpdateServices(new ServicesDto(){ Name = "qalabala", Duration = 90, IsActive = true, IsDeleted = true, Id = 1 });
+
+            //3 NameAllServices      *****Не работает*****
+            //ServicesRepository servicesRepository = new ServicesRepository();
+            //servicesRepository.NameAllServices(new ServicesDto() { IsActive = true });
+            //var nameAllServicesByTrue = servicesRepository;
+            //Console.WriteLine(nameAllServicesByTrue);
+
+            //public const string NameAllServicesQuery = "SELECT \"Name\" FROM \"Services\"WHERE \"IsActive\" = true AND \"IsDeleted\" = false;";
 
             //string conectionString = "Server=localhost; Port=5432; User Id=postgres; Password=postgres; Database=MyFirstDB;";
             //using (var connection = new NpgsqlConnection(conectionString))
