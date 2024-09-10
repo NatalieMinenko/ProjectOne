@@ -44,11 +44,21 @@ namespace NailStudioBot.BLL
             ServicesRepository.UpdateServices(servicesDto);
         }
 
+        public ServicesOutputModel GetServicesById(int id)
+        {
+            var userDto = ServicesRepository.GetServicesById(id);
+            return _mapper.Map<ServicesOutputModel>(userDto);
+        }
+
         public void DeleteService(int id)
         {
             ServicesRepository.DeleteServices(id);
         }
 
+           public bool ServicesExists(int id)
+        {
+            return GetServicesById(id) != null;
+        }
         //public ServicesOutputModel FindMasterByServiceId(int id)
         //{
         //    var servicesDto = ServicesRepository.FindMasterByServiceId(id);

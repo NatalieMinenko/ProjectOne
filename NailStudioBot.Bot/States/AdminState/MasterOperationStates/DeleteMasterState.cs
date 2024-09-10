@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-namespace NailStudioBot.Bot.States.AdminState
+namespace NailStudioBot.Bot.States.AdminState.MasterOperationStates
 {
     public class DeleteMasterState : AbstractState
     {
         private UserService _userService;
         public DeleteMasterState()
         {
-            _userService = new UserService(); 
+            _userService = new UserService();
         }
 
         public override void HandleMessage(Context context, Update update)
@@ -32,7 +32,7 @@ namespace NailStudioBot.Bot.States.AdminState
                     context.BotClient.SendTextMessageAsync(context.ChatId, $"Пользователь с ID {id} не найден.");
                 }
             }
-            else 
+            else
             {
                 context.BotClient.SendTextMessageAsync(context.ChatId, "Пожалуйста, введите корректный ID пользователя.");
             }

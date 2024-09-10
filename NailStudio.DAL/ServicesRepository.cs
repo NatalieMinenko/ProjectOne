@@ -94,5 +94,18 @@ namespace NailStudio.DAL
             }
         }
 
+        public ServicesDto GetServicesById(int id)
+        {
+            string conectionString = Options.ConectionString;
+            using (var connection = new NpgsqlConnection(conectionString))
+            {
+                string query = UserQuerys.GetUsersByIdQuery;
+                var args = new { id };
+
+                connection.Open();
+                return connection.QuerySingleOrDefault<ServicesDto>(query, args); //можно получить 1 или null
+            }
+        }
+
     }
 }

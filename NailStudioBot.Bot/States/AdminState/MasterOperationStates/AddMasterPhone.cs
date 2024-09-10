@@ -9,25 +9,25 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-namespace NailStudioBot.Bot.States.AdminState
+namespace NailStudioBot.Bot.States.AdminState.MasterOperationStates
 {
     public class AddMasterPhone : AbstractState
     {
         private UserService _userService;
 
         private UsersInputModel _userModel;
-         public AddMasterPhone(UsersInputModel usersInputModel) 
+        public AddMasterPhone(UsersInputModel usersInputModel)
         {
             _userModel = usersInputModel;
-            _userService= new UserService();    
+            _userService = new UserService();
         }
         public override void HandleMessage(Context context, Update update)
         {
-         
+
             _userModel.Phone = update.Message.Text;
             _userService.AddUser(_userModel);
             context.State = new AdminMenuState();
-            
+
         }
 
         public override void ReactInBot(Context context, ITelegramBotClient botClient)

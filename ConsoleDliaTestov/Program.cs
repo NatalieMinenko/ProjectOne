@@ -76,7 +76,8 @@ namespace ConsoleDliaTestov
             //var a = masterTypesRepository.GetAllMasterTypes();
 
 
-            //ServicesServices servicesServices = new ServicesServices();
+            ServicesServices servicesServices = new ServicesServices();
+            servicesServices.DeleteService(1);
             //var gg = servicesServices.GetAllServices();
             //Console.WriteLine();
             //��������
