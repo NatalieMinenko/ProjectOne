@@ -62,6 +62,18 @@ namespace ConsoleDliaTestov
             //statusReservationsRepository.DeleteStatusById(6);
             //var a = statusReservationsRepository.GetAllStatuses();
 
+            //1 - MasterTypesServices - TODO!!!!!!!!!!!!
+            //MasterTypesServicesRepository masterTypesServicesRepository = new MasterTypesServicesRepository();
+            //var a = masterTypesServicesRepository.GetAllMasterTypesServices();
+
+            //1,2,3. MasterTypes - Add/Update/Get/Delete - ��������
+            //MasterTypesRepository masterTypesRepository = new MasterTypesRepository();
+            //masterTypesRepository.AddMasters("Test3");
+            //masterTypesRepository.UpdateMasters(new MasterTypesDto()  { Name = "Test2", Id = 10 });
+            //var a = masterTypesRepository.GetAllMasterTypes();
+            //MasterTypesRepository masterTypesRepository = new MasterTypesRepository();
+            //masterTypesRepository.DeleteMasterTypesById(7);
+            //var a = masterTypesRepository.GetAllMasterTypes();
 
 
             //ServicesServices servicesServices = new ServicesServices();

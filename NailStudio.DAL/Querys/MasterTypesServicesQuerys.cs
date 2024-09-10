@@ -8,9 +8,7 @@ namespace NailStudio.DAL.Querys
 {
     public class MasterTypesServicesQuerys
     {
-        public const string GetAllMasterTypesServicesQuery = $"SELECT \"ServicesId\", \"MasterTypesId\" FROM public.\"MasterTypes_Services\";";
-
-        public const string GetAllCostQuery = $"SELECT \"Cost\" FROM public.\"MasterTypes_Services\";";
+        public const string GetAllMasterTypesServicesQuery = $"SELECT \"MasterTypeId\", \"ServiceId\", \"Cost\" FROM public.\"MasterType_Services\";";
 
     }
 }
