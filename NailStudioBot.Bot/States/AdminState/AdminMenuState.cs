@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.ReplyMarkups;
 
 namespace NailStudioBot.Bot.States.AdminState
 {
@@ -13,12 +14,46 @@ namespace NailStudioBot.Bot.States.AdminState
     {
         public override void HandleMessage(Context context, Update update)
         {
-            throw new NotImplementedException();
-        }
+            if (update.CallbackQuery.Data == "1")
+            {
+                context.State = new AdminMasterState();
+            }
+            else if (update.CallbackQuery.Data == "2")
+            {
 
+                context.State = new AdminServicesState();
+            }
+            else if (update.CallbackQuery.Data == "3")
+            {
+                context.State = new AdminReservationsState();
+            }
+       
+            //return replyState;
+        }
         public override void ReactInBot(Context context, ITelegramBotClient botClient)
         {
-            throw new NotImplementedException();
+            // using Telegram.Bot.Types.ReplyMarkups;
+
+            InlineKeyboardMarkup markup = new InlineKeyboardMarkup(
+                   new InlineKeyboardButton[][]
+                   {
+                        new InlineKeyboardButton[]
+                        {
+                            new InlineKeyboardButton("Работа с мастерами") { CallbackData="1"},
+                            new InlineKeyboardButton("Работа с услугами") { CallbackData="2"},
+                        },
+                        new InlineKeyboardButton[]
+                        {
+                            new InlineKeyboardButton("Работа с записями") { CallbackData="3"},
+      
+                        }
+                   }
+                   );
+
+            var sent = botClient.SendTextMessageAsync(context.ChatId, "Choose a response", replyMarkup: markup);
+
         }
     }
-}
+
+    }
+

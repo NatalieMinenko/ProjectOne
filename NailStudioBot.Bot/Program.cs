@@ -10,6 +10,8 @@ using NailStudioBot.Bot.States.ClientStates;
 using NailStudioBot.Bot.Statettes.AdmonState;
 using NailStudioBot.Bot.States.MasterStates;
 using NailStudioBot.Bot.States;
+using NailStudioBot.Bot.States.AdminState;
+using System.Runtime.InteropServices;
 
 
 namespace NailStudioBot.Bot
@@ -72,10 +74,36 @@ namespace NailStudioBot.Bot
                     //Сохраняем его в базку или загружаем
                     crntClient = new Context();
                     crntClient.ChatId = message.Chat.Id;
-                            crntClient.State = new StartState();
+                            crntClient.State = new AdminMenuState();
                     Clients.Add(message.Chat.Id, crntClient);
 
                    
+                }
+
+
+                crntClient.ReactInBot(botClient);
+            }
+            else if (update.Type == UpdateType.CallbackQuery)
+            {
+                var message = update.CallbackQuery.Message;
+
+
+                Context crntClient;
+
+                if (Clients.ContainsKey(message.Chat.Id))
+                {
+                    crntClient = Clients.First(x => x.Key == message.Chat.Id).Value;
+                    crntClient.HandleMessage(update);
+                }
+                else
+                {
+                    //Сохраняем его в базку или загружаем
+                    crntClient = new Context();
+                    crntClient.ChatId = message.Chat.Id;
+                    crntClient.State = new AdminMenuState();
+                    Clients.Add(message.Chat.Id, crntClient);
+
+
                 }
 
 

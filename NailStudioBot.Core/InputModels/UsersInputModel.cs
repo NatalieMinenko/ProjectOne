@@ -9,5 +9,8 @@ namespace NailStudioBot.Core.InputModels
     public class UsersInputModel
     {
         public string Name { get; set; }
+        public string Phone {  get; set; }
+
+       
     }
 }
