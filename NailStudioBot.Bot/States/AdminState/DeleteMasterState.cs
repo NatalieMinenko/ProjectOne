@@ -1,4 +1,5 @@
-﻿using NailStudioBot.Bot.Statettes;
+﻿using NailStudioBot.BLL;
+using NailStudioBot.Bot.Statettes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,37 @@ namespace NailStudioBot.Bot.States.AdminState
 {
     public class DeleteMasterState : AbstractState
     {
+        private UserService _userService;
+        public DeleteMasterState()
+        {
+            _userService = new UserService(); 
+        }
+
         public override void HandleMessage(Context context, Update update)
         {
-            throw new NotImplementedException();
+            if (int.TryParse(update.Message.Text, out int id))
+            {
+                if (_userService.UserExists(id))
+                {
+                    _userService.DeleteUser(id);
+                    context.BotClient.SendTextMessageAsync(context.ChatId, $"Пользователь с ID {id} был успешно удалён.");
+                }
+                else
+                {
+                    context.BotClient.SendTextMessageAsync(context.ChatId, $"Пользователь с ID {id} не найден.");
+                }
+            }
+            else 
+            {
+                context.BotClient.SendTextMessageAsync(context.ChatId, "Пожалуйста, введите корректный ID пользователя.");
+            }
+
+            context.State = new AdminMenuState();
         }
 
         public override void ReactInBot(Context context, ITelegramBotClient botClient)
         {
-            throw new NotImplementedException();
+            botClient.SendTextMessageAsync(context.ChatId, "Введите ID пользователя, которого хотите удалить:");
         }
     }
 }

@@ -30,7 +30,7 @@ namespace NailStudioBot.BLL
         {
             var userDto = _mapper.Map<UsersDto>(user);
 
-            UserRepository.AddUser(userDto.Name);
+            UserRepository.AddUser(userDto.Name, userDto.Phone);
         }
 
         public List<UsersOutputModel> GetAllUsers()
@@ -42,7 +42,7 @@ namespace NailStudioBot.BLL
 
         public UsersOutputModel GetUsersById(int id)
         {
-            var userDto = UserRepository.GetUsersById(id);
+            var userDto = UserRepository.GetUserById(id);
             return _mapper.Map<UsersOutputModel>(userDto);
         }
 
@@ -50,6 +50,16 @@ namespace NailStudioBot.BLL
         {
             var userDto = _mapper.Map<UsersDto>(user);
             UserRepository.UpdateUser(userDto);
+        }
+
+        public void DeleteUser(int id)
+        {
+            UserRepository.DeleteUsers(id);
+        }
+
+        public bool UserExists(int id)
+        {
+            return GetUsersById(id) != null;
         }
     }
 

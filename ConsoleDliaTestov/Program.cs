@@ -19,7 +19,7 @@ namespace ConsoleDliaTestov
 
             //1,2,3.Users - ���� Add/Update/GetAllUsers Users - ��������.
             //UserRepository userRepository = new UserRepository();
-            //userRepository.AddUser("Svetik");
+            //userRepository.AddUser("Svetik", "666");
             //userRepository.UpdateUser(new UsersDto() { Name = "Ksenia", Id = 5 });
             //var a = userRepository.GetAllUsers();
 
@@ -33,7 +33,7 @@ namespace ConsoleDliaTestov
 
             //5.Users - DeleteUsers - ��������
             //UserRepository userRepository1 = new UserRepository();
-            //userRepository1.DeleteUsers(58);
+            //userRepository1.DeleteUsers(27);
             //var a = userRepository1.GetAllUsers();
 
             //1,2,3.UserRoles - Add|GetAll UserRoles - ��������!

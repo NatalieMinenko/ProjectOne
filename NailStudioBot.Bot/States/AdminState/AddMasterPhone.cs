@@ -26,6 +26,7 @@ namespace NailStudioBot.Bot.States.AdminState
          
             _userModel.Phone = update.Message.Text;
             _userService.AddUser(_userModel);
+            context.State = new AdminMenuState();
             
         }
 
