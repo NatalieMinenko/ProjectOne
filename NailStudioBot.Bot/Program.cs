@@ -74,7 +74,7 @@ namespace NailStudioBot.Bot
                     //Сохраняем его в базку или загружаем
                     crntClient = new Context();
                     crntClient.ChatId = message.Chat.Id;
-                            crntClient.State = new AdminMenuState();
+                            crntClient.State = new StartState();
                     Clients.Add(message.Chat.Id, crntClient);
 
                    
