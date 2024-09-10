@@ -18,6 +18,8 @@ namespace NailStudio.DAL.Querys
 
         public const string DeleteServicesQuery = "DELETE FROM \"Services\" WHERE \"Id\" = @id;";
 
+        public const string GetServicesByIdQuery = $"SELECT \"Id\", \"Name\" FROM public.\"Services\" WHERE \"Id\"=@Id;";
+
         public const string FindMasterByServiceIdQuery = "SELECT S.\"Id\", S.\"Name\", S.\"Duration\", MTS.\"Cost\", MT.\"Id\", " +
            "MT.\"Name\", U.\"Id\", U.\"Name\" " +
            "FROM \"Services\" AS S " +

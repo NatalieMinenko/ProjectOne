@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-namespace NailStudioBot.Bot.States.AdminState
+namespace NailStudioBot.Bot.States.AdminState.MasterOperationStates
 {
     public class AddMasterNameState : AbstractState
     {
@@ -18,13 +18,13 @@ namespace NailStudioBot.Bot.States.AdminState
         {
             var user = new UsersInputModel();
             user.Name = update.Message.Text;
-            context.State=new AddMasterPhone(user);
+            context.State = new AddMasterPhone(user);
 
         }
 
         public override void ReactInBot(Context context, ITelegramBotClient botClient)
         {
-            var sent = botClient.SendTextMessageAsync(context.ChatId, "Введите Имя" );
+            var sent = botClient.SendTextMessageAsync(context.ChatId, "Введите Имя");
         }
     }
 }

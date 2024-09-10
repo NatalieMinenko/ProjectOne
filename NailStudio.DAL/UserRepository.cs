@@ -8,13 +8,13 @@ namespace NailStudio.DAL
 {
     public class UserRepository
     {
-        public void AddUser(string name)
+        public void AddUser(string name, string phone)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = UserQuerys.AddUserQuery;
-                var args = new { Name = name, RoleId=1, MasterTypeId = 3 };
+                var args = new { Name = name, RoleId=1, MasterTypeId = 3, Phone = phone};
 
                 connection.Open();
                 connection.Query(query, args);
@@ -44,15 +44,16 @@ namespace NailStudio.DAL
             }
         }
 
-        public List<UsersDto> GetUsersById(int id)
+        public UsersDto GetUserById(int id)
         {
             string conectionString = Options.ConectionString;
             using (var connection = new NpgsqlConnection(conectionString))
             {
                 string query = UserQuerys.GetUsersByIdQuery;
+                var args = new { id };
 
                 connection.Open();
-                return connection.Query<UsersDto>(query).ToList();
+                return connection.QuerySingleOrDefault<UsersDto>(query, args); //можно получить 1 или null
             }
         }
 

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-namespace NailStudioBot.Bot.States.AdminState
+namespace NailStudioBot.Bot.States.AdminState.ServicesOperationsStates
 {
-    public class DeleteMasterState : AbstractState
+    public class AddServicesState : AbstractState
     {
         public override void HandleMessage(Context context, Update update)
         {
