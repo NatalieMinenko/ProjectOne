@@ -2,7 +2,6 @@ using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Polling;
-using NailStudioBot.Core.InputModels;
 using NailStudioBot.BLL;
 using NailStudio.DAL;
 using System.Xml.Linq;

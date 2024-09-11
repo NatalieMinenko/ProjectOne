@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using NailStudioBot.Core.Dtos;
 using NailStudioBot.Core.InputModels;
+using NailStudioBot.Core.OutPutModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace NailStudioBot.BLL.Mappings
         public ReservationsMappingProfile()
         {
             CreateMap<ReservationsInputModel, ReservationsDto>();
-            CreateMap<ReservationsDto, ReservationsInputModel>();
+            CreateMap<ReservationsDto, ReservationsOutputModel>();
         }
     }
 }
