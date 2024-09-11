@@ -24,10 +24,10 @@ namespace NailStudioBot.Bot.States.MasterStates.MasterServicesStates
 
             string res = "";
 
-            foreach (var reservation in reservations)
-            {
-                res += $"{reservations.Id}-{reservations.Name}-{reservations.Cost}\n";
-            }
+            //foreach (var reservation in reservations)
+            //{
+            //    res += $"{reservations.Id}-{reservations.Name}-{reservations.Cost}\n";
+            //}
 
             await botClient.SendTextMessageAsync(new ChatId(context.ChatId), res);
 
