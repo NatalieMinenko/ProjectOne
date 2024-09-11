@@ -25,16 +25,13 @@ namespace NailStudioBot.Bot.Statettes.AdmonState
                 else 
                 {
                     context.State = new LoginAdminState();
-                }
-
-                
+                } 
             }
         }
 
         public override void ReactInBot(Context context, ITelegramBotClient botClient)
         {
                  botClient.SendTextMessageAsync(new ChatId(context.ChatId), "Введите пароль");
-
         }
     }
 }
