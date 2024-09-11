@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-namespace NailStudioBot.Bot.States.AdminState
+namespace NailStudioBot.Bot.States.AdminState.ReservationsStates
 {
-    public class AdminReservationsState : AbstractState
+    public class GetAllReservationsState : AbstractState
     {
         public override void HandleMessage(Context context, Update update)
         {
