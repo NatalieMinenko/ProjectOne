@@ -1,4 +1,5 @@
 ﻿using NailStudioBot.Bot.States.AdminState.MasterOperationStates;
+using NailStudioBot.Bot.States.AdminState.ReservationsStates;
 using NailStudioBot.Bot.Statettes;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,12 @@ namespace NailStudioBot.Bot.States.AdminState
     {
         public override void HandleMessage(Context context, Update update)
         {
+            if (update.CallbackQuery == null)
+            {
+                context.State = new AdminMenuState();
+                return;
+            }
+
             if (update.CallbackQuery.Data == "1")
             {
                 context.State = new AdminMasterState();
@@ -28,6 +35,7 @@ namespace NailStudioBot.Bot.States.AdminState
             {
                 context.State = new AdminReservationsState();
             }
+            
        
             //return replyState;
         }
