@@ -17,6 +17,8 @@ namespace NailStudio.DAL.Querys
 
         public const string DeleteReservationByIdQuery = $"DELETE FROM \"Reservations\" WHERE \"Id\" = @Id;";
 
+        public const string GetReservationByIdQuery = $"SELECT \"Id\", \"Name\" FROM public.\"Reservations\" WHERE \"Id\"=@Id;";
+
 
     }
 }

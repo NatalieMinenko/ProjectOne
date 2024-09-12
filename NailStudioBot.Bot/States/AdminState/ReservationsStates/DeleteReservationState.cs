@@ -19,12 +19,30 @@ namespace NailStudioBot.Bot.States.AdminState.ReservationsStates
         }
         public override void HandleMessage(Context context, Update update)
         {
-            throw new NotImplementedException();
-        }
+            if (int.TryParse(update.Message.Text, out int id))
+            {
+                if (_reservationsServices.ReservationExist(id))
+                {
+                    _reservationsServices.DeleteReservation(id);
+                    context.BotClient.SendTextMessageAsync(context.ChatId, $"Пользователь с ID {id} был успешно удалён.");
+                }
+                else
+                {
+                    context.BotClient.SendTextMessageAsync(context.ChatId, $"Пользователь с ID {id} не найден.");
+                }
+            }
+            else
+            {
+                context.BotClient.SendTextMessageAsync(context.ChatId, "Пожалуйста, введите корректный ID пользователя.");
+            }
 
+            context.State = new AdminMenuState();
+        }
         public override void ReactInBot(Context context, ITelegramBotClient botClient)
         {
-            throw new NotImplementedException();
+            botClient.SendTextMessageAsync(context.ChatId, "Введите Id записи, которую хотите удалить");
         }
+
     }
 }
+
