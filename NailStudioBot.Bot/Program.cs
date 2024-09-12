@@ -15,16 +15,10 @@ using System.Runtime.InteropServices;
 
 namespace NailStudioBot.Bot
 
-
-
 {
     public class Program
     {
-
-
         public static Dictionary<long, Context> Clients { get; set; }
-
-
 
         public static void Main(string[] args)
         {
@@ -52,14 +46,11 @@ namespace NailStudioBot.Bot
             Console.ReadLine();
         }
 
-
-
         public static async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
             if (update.Type == UpdateType.Message)
             {
                 var message = update.Message;
-
 
                 Context crntClient;
 
@@ -74,9 +65,7 @@ namespace NailStudioBot.Bot
                     crntClient = new Context();
                     crntClient.ChatId = message.Chat.Id;
                             crntClient.State = new AdminMenuState();
-                    Clients.Add(message.Chat.Id, crntClient);
-
-                   
+                    Clients.Add(message.Chat.Id, crntClient);   
                 }
 
 
@@ -101,14 +90,10 @@ namespace NailStudioBot.Bot
                     crntClient.ChatId = message.Chat.Id;
                     crntClient.State = new AdminMenuState();
                     Clients.Add(message.Chat.Id, crntClient);
-
-
                 }
-
 
                 crntClient.ReactInBot(botClient);
             }
-
 
         }
         public static async Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
