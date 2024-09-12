@@ -20,18 +20,18 @@ namespace NailStudioBot.Bot.States.MasterStates.MasterServicesStates
 
         public override async void ReactInBot(Context context, ITelegramBotClient botClient)
         {
-            var reservations = new ReservationsServices().GetAllReservations();
+            //var reservations = new ReservationsServices().GetAllReservations();
 
-            string res = "";
+            //string res = "";
 
             foreach (var reservation in reservations)
             {
                 res += $"{reservations.Id}-{reservations.Name}-{reservations.Cost}\n";
             }
 
-            await botClient.SendTextMessageAsync(new ChatId(context.ChatId), res);
+            //await botClient.SendTextMessageAsync(new ChatId(context.ChatId), res);
 
-            context.State = new MasterMenuState();
+            //context.State = new MasterMenuState();
         }
     }
 }
