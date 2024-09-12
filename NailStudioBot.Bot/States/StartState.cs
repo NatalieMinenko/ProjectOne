@@ -27,7 +27,7 @@ namespace NailStudioBot.Bot.States
                         context.State = new LoginAdminState();
                         break;
                     case "/master":
-                        context.State = new MasterStartState();
+                        context.State = new LoginMasterState();
                         break;
                     default:
 
@@ -39,7 +39,6 @@ namespace NailStudioBot.Bot.States
         public override void ReactInBot(Context context, ITelegramBotClient botClient)
         {
             botClient.SendTextMessageAsync(new ChatId(context.ChatId), "Добро пожаловать в салон Ноготочки в стиле IT введите /start");
-
         }
     }
     }
