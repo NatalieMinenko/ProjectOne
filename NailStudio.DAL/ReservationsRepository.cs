@@ -80,6 +80,18 @@ namespace NailStudio.DAL
             }
         }
 
+        public ReservationsDto GetReservationById(int id)
+        {
+            string conectionString = Options.ConectionString;
+            using (var connection = new NpgsqlConnection(conectionString))
+            {
+                string query = ReservationsQuerys.GetReservationByIdQuery;
+                var args = new { id };
+
+                connection.Open();
+                return connection.QuerySingleOrDefault<ReservationsDto>(query, args); //можно получить 1 или null
+            }
+        }
 
 
     }

@@ -48,5 +48,16 @@ namespace NailStudioBot.BLL
             ReservationsRepository.DeleteReservationById(id);
         }
 
+        public ReservationsOutputModel GetReservationById(int id)
+        {
+            var reservationDto = ReservationsRepository.GetReservationById(id);
+            return _mapper.Map<ReservationsOutputModel>(reservationDto);
+        }
+
+        public bool ReservationExist(int id)
+        {
+            return GetReservationById(id) != null;
+        }
+
     }
 }
