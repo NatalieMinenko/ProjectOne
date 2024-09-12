@@ -30,7 +30,7 @@ namespace NailStudioBot.Bot
         {
             Clients = new Dictionary<long, Context>();
 
-            ITelegramBotClient BotClient = new TelegramBotClient(Environment.GetEnvironmentVariable("6997618609:AAEIBEGrUEXn7LXUK5y33vjjPmaMsGfs6SQ"));
+            ITelegramBotClient BotClient = new TelegramBotClient(Environment.GetEnvironmentVariable("TGtokenNogotochki"));
 
             var cts = new CancellationTokenSource();
             var cancellationToken = cts.Token;
