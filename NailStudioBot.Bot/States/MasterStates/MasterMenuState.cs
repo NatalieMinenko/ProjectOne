@@ -1,5 +1,4 @@
-﻿using NailStudioBot.Bot.States.AdminState.MasterOperationStates;
-using NailStudioBot.Bot.States.MasterStates.MasterServicesStates;
+﻿using NailStudioBot.Bot.States.MasterStates.MasterServicesStates;
 using NailStudioBot.Bot.States.AdminState;
 using NailStudioBot.Bot.Statettes;
 using System;
@@ -10,6 +9,8 @@ using System.Threading.Tasks;
 using Telegram.Bot.Types.ReplyMarkups;
 using Telegram.Bot.Types;
 using Telegram.Bot;
+using NailStudioBot.Bot.States.AdminState.MasterOperationStates;
+using NailStudioBot.Bot.States.AdminState.ReservationsStates;
 
 namespace NailStudioBot.Bot.States.MasterStates
 {
@@ -17,6 +18,12 @@ namespace NailStudioBot.Bot.States.MasterStates
     {
         public override void HandleMessage(Context context, Update update)
         {
+            if (update.CallbackQuery == null)
+            {
+                context.State = new AdminMenuState();
+                return;
+            }
+
             if (update.CallbackQuery.Data == "1")
             {
                 context.State = new ShowActiveReservationsState();
@@ -26,13 +33,13 @@ namespace NailStudioBot.Bot.States.MasterStates
 
                 context.State = new ShowAllReservationsState();
             }
+            
             //return replyState;
         }
         public override void ReactInBot(Context context, ITelegramBotClient botClient)
         {
-            // using Telegram.Bot.Types.ReplyMarkups;
-
             InlineKeyboardMarkup markup = new InlineKeyboardMarkup(
+
                    new InlineKeyboardButton[][]
                    {
                         new InlineKeyboardButton[]
@@ -44,7 +51,7 @@ namespace NailStudioBot.Bot.States.MasterStates
                    );
 
             var sent = botClient.SendTextMessageAsync(context.ChatId, "Choose a response", replyMarkup: markup);
-
         }
     }
 }
+
