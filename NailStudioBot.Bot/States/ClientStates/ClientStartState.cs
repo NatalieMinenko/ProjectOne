@@ -19,7 +19,7 @@ namespace NailStudioBot.Bot.States.ClientStates
         {
             if (update.CallbackQuery == null)
             {
-                context.State = new AdminMenuState();
+                context.State = new StartState();
                 return;
             }
 
@@ -42,7 +42,7 @@ namespace NailStudioBot.Bot.States.ClientStates
             }
         }
 
-        public override void ReactInBot(Context context, ITelegramBotClient botClient)
+        public override async void ReactInBot(Context context, ITelegramBotClient botClient)
         {
         InlineKeyboardMarkup markup = new InlineKeyboardMarkup(
              new InlineKeyboardButton[][]
@@ -50,13 +50,13 @@ namespace NailStudioBot.Bot.States.ClientStates
                    new InlineKeyboardButton[]
                    {
                    new InlineKeyboardButton("Выбрать мастера") { CallbackData="1"},
-                   new InlineKeyboardButton("Выберать услугу") { CallbackData="2"},
+                   new InlineKeyboardButton("Выбрать услугу") { CallbackData="2"},
                    
                    },
                    new InlineKeyboardButton[]
                    {
                    new InlineKeyboardButton("Просмотреть имеющиеся записи") { CallbackData="3"},
-                   new InlineKeyboardButton("Выберать дату/время") { CallbackData="4"},
+                   new InlineKeyboardButton("Выбрать дату/время") { CallbackData="4"},
                    }
              }
              );
