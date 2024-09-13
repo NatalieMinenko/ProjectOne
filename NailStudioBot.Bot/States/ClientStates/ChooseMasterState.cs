@@ -20,12 +20,21 @@ namespace NailStudioBot.Bot.States.ClientStates
     {
         public override void HandleMessage(Context context, Update update)
         {
-            throw new NotImplementedException();
+           
         }
 
         public override async void ReactInBot(Context context, ITelegramBotClient botClient)
         {
-            throw new NotImplementedException();
+           var masters = new MasterTypeServices().GetAllMasterTypes();
+
+            string res = "";
+            foreach (var master in masters)
+            {
+                res += master.Name;
+            }
+            await botClient.SendTextMessageAsync(new ChatId(context.ChatId), res);
+
+            context.State = new ClientStartState();
         }
                  
     }
