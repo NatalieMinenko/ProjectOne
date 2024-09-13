@@ -29,6 +29,23 @@ namespace ConsoleDliaTestov
             //UserRepository userRepository = new UserRepository();
             //userRepository.AddUser("Svetik", "666");
             //userRepository.UpdateUser(new UsersDto() { Name = "Ksenia", Id = 5 });
+=======
+            UserRepository userRepository = new UserRepository();
+            userRepository.AddUser("Svetik");
+            userRepository.UpdateUser(new UsersDto() { Name = "Ksenia", Id = 5 });
+            var a = userRepository.GetAllUsers();
+
+
+
+
+
+
+            //Console.WriteLine(Environment.GetEnvironmentVariable("Bot"));
+            ////UserRepository userRepository = new UserRepository();
+
+            //userRepository.UpdateUser(new UsersDto() { Name = "AAAAA", Id = 1 });
+
+>>>>>>> Stashed changes
             //var a = userRepository.GetAllUsers();
 
             //UserRepository userRepository = new UserRepository();

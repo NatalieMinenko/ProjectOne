@@ -14,7 +14,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NailStudio.DAL\NailStudio.DAL.csproj" />
+<<<<<<< Updated upstream
     <ProjectReference Include="..\NailStudioBot.BLL\NailStudioBot.BLL.csproj" />
+=======
+>>>>>>> Stashed changes
     <ProjectReference Include="..\NailStudioBot.Core\NailStudioBot.Core.csproj" />
   </ItemGroup>
 

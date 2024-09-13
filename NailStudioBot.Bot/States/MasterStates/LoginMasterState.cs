@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types;
 using Telegram.Bot;
+using NailStudioBot.BLL;
 
 namespace NailStudioBot.Bot.States.MasterStates
 {
@@ -19,9 +20,10 @@ namespace NailStudioBot.Bot.States.MasterStates
             if (update.Type == UpdateType.Message)
             {
                 var message = update.Message;
+
                 if (message.Text.ToLower() == MasterPassword)
                 {
-                    context.State = new MasterMenuState();
+                    context.State = new MasterIdState();
                 }
                 else
                 {

@@ -11,6 +11,10 @@ using Telegram.Bot.Types;
 using Telegram.Bot;
 using NailStudioBot.Bot.States.AdminState.MasterOperationStates;
 using NailStudioBot.Bot.States.AdminState.ReservationsStates;
+using NailStudioBot.BLL;
+using NailStudioBot.Core.InputModels;
+using NailStudioBot.Core.OutPutModels;
+using System.Reflection.Metadata.Ecma335;
 
 namespace NailStudioBot.Bot.States.MasterStates
 {
@@ -20,7 +24,7 @@ namespace NailStudioBot.Bot.States.MasterStates
         {
             if (update.CallbackQuery == null)
             {
-                context.State = new AdminMenuState();
+                context.State = new MasterIdState();
                 return;
             }
 
@@ -30,11 +34,9 @@ namespace NailStudioBot.Bot.States.MasterStates
             }
             else if (update.CallbackQuery.Data == "2")
             {
-
                 context.State = new ShowAllReservationsState();
             }
             
-            //return replyState;
         }
         public override void ReactInBot(Context context, ITelegramBotClient botClient)
         {

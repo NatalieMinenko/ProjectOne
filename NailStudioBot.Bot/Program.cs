@@ -12,14 +12,13 @@ using NailStudioBot.Bot.States;
 using NailStudioBot.Bot.States.AdminState;
 using System.Runtime.InteropServices;
 
-
 namespace NailStudioBot.Bot
 
 {
     public class Program
     {
         public static Dictionary<long, Context> Clients { get; set; }
-
+ 
         public static void Main(string[] args)
         {
             Clients = new Dictionary<long, Context>();
@@ -88,7 +87,7 @@ namespace NailStudioBot.Bot
                     //Сохраняем его в базку или загружаем
                     crntClient = new Context();
                     crntClient.ChatId = message.Chat.Id;
-                    crntClient.State = new AdminMenuState();
+                    crntClient.State = new StartState();
                     Clients.Add(message.Chat.Id, crntClient);
                 }
 
