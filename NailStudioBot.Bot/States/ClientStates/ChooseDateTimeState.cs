@@ -11,6 +11,10 @@ namespace NailStudioBot.Bot.States.ClientStates
 {
     public class ChooseDateTimeState : AbstractState
     {
+        public ChooseDateTimeState(int id) 
+        {
+            var c = id;
+        }
         public override void HandleMessage(Context context, Update update)
         {
             throw new NotImplementedException();

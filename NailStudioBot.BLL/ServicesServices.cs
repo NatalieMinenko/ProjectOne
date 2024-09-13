@@ -62,20 +62,10 @@ namespace NailStudioBot.BLL
             ServicesRepository.DeleteServices(id);
         }
 
-           public bool ServicesExists(int id)
+        public bool ServicesExists(int id)
         {
             return GetServicesById(id) != null;
         }
-        //public ServicesOutputModel FindMasterByServiceId(int id)
-        //{
-        //    var servicesDto = ServicesRepository.FindMasterByServiceId(id);
-        //    return _mapper.Map<ServicesOutputModel>(servicesDto);
-        //}
-        //public List<ServicesOutputModel> GetAllServices()
-        //{
-        //    List<ServicesDto> servicesDtos = ServicesRepository.GetAllServices();       //Хз чёт эти 2 метода ошибки выдают, нужно посмотреть 
-        //    return _mapper.Map<List<ServicesOutputModel>>(servicesDtos);
-        //}
 
     }
 }
