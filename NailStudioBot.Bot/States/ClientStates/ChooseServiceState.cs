@@ -1,4 +1,6 @@
-﻿using NailStudioBot.Bot.Statettes;
+﻿using NailStudio.DAL.Querys;
+using NailStudioBot.BLL;
+using NailStudioBot.Bot.Statettes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +15,23 @@ namespace NailStudioBot.Bot.States.ClientStates
     {
         public override void HandleMessage(Context context, Update update)
         {
-            throw new NotImplementedException();
+            
         }
 
-        public override void ReactInBot(Context context, ITelegramBotClient botClient)
+        public override async void ReactInBot(Context context, ITelegramBotClient botClient)
         {
-            throw new NotImplementedException();
+            var users = new ServicesServices().GetAllServices();
+
+            string res = "";
+
+            foreach (var user in users)
+            {
+                res += $"{user.Id}-{user.Name}\n";
+            }
+
+            await botClient.SendTextMessageAsync(new ChatId(context.ChatId), res);
+
+            context.State = new ClientStartState();
         }
     }
 }
