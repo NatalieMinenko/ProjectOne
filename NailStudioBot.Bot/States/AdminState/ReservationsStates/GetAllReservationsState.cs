@@ -27,34 +27,37 @@ namespace NailStudioBot.Bot.States.AdminState.ReservationsStates
 
         public override void ReactInBot(Context context, ITelegramBotClient botClient)
         {
+            var reservations = new ReservationsServices().GetAllReservations();
+            StringBuilder res = new StringBuilder();
 
-            //var reservations = new ReservationsServices().GetAllReservations();
+            // Формируем сообщение о всех резервированиях
+            foreach (var reservation in reservations)
+            {
+                res.AppendLine($"{reservation.StartDateTime} - {reservation.Sum} - {reservation.ClientId}");
+            }
 
-            //string res = "";
+            // Проверяем, пуст ли результат
+            if (res.Length == 0)
+            {
+                res.Append("Нет доступных резервирований.");
+            }
 
-            //foreach (var reservation in reservations)
-            //{
-            //    res += $"{reservations.StartDateTime}-{reservations.Name}-{reservations.Cost}\n";
-            //}
+            var markup = new InlineKeyboardMarkup(new[]
+            {
+                new[] // первая строка кнопок
+                {
+                    InlineKeyboardButton.WithCallbackData("Вернуться в меню", "1")                         // Маппинг не работает
+                }
+            });
 
-            //botClient.SendTextMessageAsync(new ChatId(context.ChatId), res);
 
-            //context.State = new MasterMenuState();
+
+            botClient.SendTextMessageAsync(new ChatId(context.ChatId), res.ToString(), replyMarkup: markup);
+
+
+
 
         }
-
-        InlineKeyboardMarkup markup = new InlineKeyboardMarkup(
-                new InlineKeyboardButton[][]
-                {
-                        new InlineKeyboardButton[]
-                        {
-                            new InlineKeyboardButton("Вернутся в меню") { CallbackData="1"},
-
-                        },
-
-                }
-                );
-
     }
 }
 
