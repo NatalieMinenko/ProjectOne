@@ -14,7 +14,15 @@ namespace ConsoleDliaTestov
     {
         static void Main(string[] args)
         {
+            //public abstract class AbstractState
+            //    {
+            //        public abstract void 
+            //    }
 
+            //class Options
+            //{
+            //    public const string ConnectionString = "Server=localhost; Port=5432;User Id=postgres; Password=gfhjkm18; Database=Nogotochki;";
+            //}
             //Console.WriteLine(Environment.GetEnvironmentVariable("Bot"));
 
             //1,2,3.Users - ���� Add/Update/GetAllUsers Users - ��������.
@@ -76,8 +84,8 @@ namespace ConsoleDliaTestov
             //var a = masterTypesRepository.GetAllMasterTypes();
 
 
-            ServicesServices servicesServices = new ServicesServices();
-            servicesServices.DeleteService(1);
+            //ServicesServices servicesServices = new ServicesServices();
+            //servicesServices.DeleteService(1);
             //var gg = servicesServices.GetAllServices();
             //Console.WriteLine();
             //��������
@@ -121,8 +129,8 @@ namespace ConsoleDliaTestov
             //    string query = "INSERT INTO \"Users\"(\"Name\") VALUES ('Olga');";
             //    connection.Open();
             //    connection.Query(query);
-            //}
         }
     }
 }
+
     
