@@ -15,6 +15,7 @@ namespace NailStudioBot.BLL.Mappings
         public ReservationsMappingProfile()
         {
             CreateMap<ReservationsInputModel, ReservationsDto>();
+            CreateMap<ReservationsDto,ReservationsInputModel>();
             CreateMap<ReservationsDto, ReservationsOutputModel>();
         }
     }

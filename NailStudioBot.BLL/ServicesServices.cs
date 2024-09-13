@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using mapper;
 using NailStudio.DAL;
+using NailStudioBot.BLL.Mappings;
 using NailStudioBot.Core.Dtos;
 using NailStudioBot.Core.InputModels;
 using NailStudioBot.Core.OutPutModels;
@@ -10,16 +11,21 @@ namespace NailStudioBot.BLL
     public class ServicesServices
     {
         public ServicesRepository ServicesRepository { get; set; }
+        public MasterTypesServicesRepository MasterTypesRepository { get; set; }
 
         private Mapper _mapper;
 
+
+
         public ServicesServices()
         {
+            MasterTypesRepository = new MasterTypesServicesRepository();
             ServicesRepository = new ServicesRepository();
             var config = new MapperConfiguration(
                 cfg =>
                 {
                     cfg.AddProfile(new ServicesMappingProfile());
+                    cfg.AddProfile(new MasterType_ServicesMappingProfile());
                 });
             _mapper = new Mapper(config);
         }
@@ -52,6 +58,7 @@ namespace NailStudioBot.BLL
 
         public void DeleteService(int id)
         {
+            MasterTypesRepository.DeleteMasterTypesServicesById(id);
             ServicesRepository.DeleteServices(id);
         }
 
