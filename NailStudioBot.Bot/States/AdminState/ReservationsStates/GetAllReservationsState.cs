@@ -46,16 +46,11 @@ namespace NailStudioBot.Bot.States.AdminState.ReservationsStates
             {
                 new[] // первая строка кнопок
                 {
-                    InlineKeyboardButton.WithCallbackData("Вернуться в меню", "1")                         // Маппинг не работает
+                    InlineKeyboardButton.WithCallbackData("Вернуться в меню", "1")         
                 }
             });
 
-
-
             botClient.SendTextMessageAsync(new ChatId(context.ChatId), res.ToString(), replyMarkup: markup);
-
-
-
 
         }
     }

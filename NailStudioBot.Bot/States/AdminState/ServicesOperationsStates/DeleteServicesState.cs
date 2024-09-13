@@ -27,7 +27,7 @@ namespace NailStudioBot.Bot.States.AdminState.ServicesOperationsStates
                     // Удаляем услугу
                     _servicesServices.DeleteService(serviceId);
                     context.BotClient.SendTextMessageAsync(context.ChatId,
-                        $"Услуга с ID {serviceId} была успешно удалена.");
+                        $"Услуга с ID {serviceId} была успешно удалена."); // Тут должно быть новое состояние
                 }
                 else
                 {

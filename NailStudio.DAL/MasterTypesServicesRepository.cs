@@ -30,6 +30,18 @@ namespace NailStudio.DAL
                 return connection.Query<MasterType_ServicesDto>(query).ToList();
             }
         }
+        public void DeleteMasterTypesServicesById(int id)
+        {
+            string conectionString = Options.ConectionString;
+            using (var connection = new NpgsqlConnection(conectionString))
+            {
+                string query = MasterTypesServicesQuerys.DeleteMasterTypeServicesById;
+                var args = new { ServiceId = id };
+                
+                connection.Open();
+                connection.Query(query, args);
+            }
+        }
 
     }
 }
